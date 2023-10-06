@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/account/done') }}
+{% endblock %}
+
+{% block body %}
+	<section class="done">
+		<div class="info">
+			<img src="/build/images/account/done/done.svg" alt="landscape">
+			<h2>Nous avons bien reçu votre hébergement !</h2>
+			<p>Merci de votre confiance. Votre hébergement est maintenant en ligne. Vous pourrez la retrouver dans la section « Annonces » de votre compte.</p>
+			<div class="btn">
+				<a class="btn-1" href="{{ path('app_account', {'page': 'my-hostings'}) }}">Voir mes hébergements</a>
+				<a href="{{ path('app_account', {'page': 'new-hosting'}) }}">Déposer un nouvel hébergement</a>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block footer %}{% endblock %}

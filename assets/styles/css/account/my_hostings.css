@@ -1,0 +1,366 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 36px;
+    padding-top: 104px;
+    align-items: center;
+}
+
+.header-text {
+    display: flex;
+    max-width: 870px;
+    font-weight: 400;
+    font-size: large;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title h1 {
+    display: flex;
+    font-size: 2.2rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title h1::after {
+    content: "";
+    margin-top: 8px;
+    border-bottom: 3px solid rgb(255 143 98);
+    display: block;
+    width: 40px;
+    transform: translateY(50%);
+}
+
+
+.search {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.myHosting-panel {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 104px;
+    width: 85%;
+    max-width: 1266px;
+    font-size: 20px;
+    justify-items: center;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu-list {
+    margin: 34px 0px;
+    font-size: 16px;
+}
+
+.menu-list span {
+    color: #ff5314;
+    padding: 10px;
+    background-color: #fef0e9;
+}
+
+.nothing-found {
+    display: flex;
+    width: unset;
+    flex-direction: column;
+    padding-top: 73px;
+    gap: 13px;
+    align-items: center;
+    justify-content: center;
+}
+
+.nothing-found img {
+    width: 145px;
+}
+
+.myHosting-panel-info {
+    background-color: white;
+    box-shadow: 0px 0px 4px #00000026;
+    padding: 12px;
+    margin: 9px 0px;
+    width: 100%;
+    display: flex;
+    border-radius: 8px;
+    font-size: 18px;
+    flex-direction: row;
+    align-content: center;
+}
+
+.myHosting-panel-info a {
+    color: black;
+    line-height: normal;
+    text-decoration: none;
+}
+
+.myHosting-panel-info a img {
+    height: 100%;
+}
+
+.myHosting-panel-info p {
+    color: rgb(0 0 0);
+    font-weight: bold;
+}
+
+.myHosting-panel-info span {
+    color: rgb(0 0 0);
+    font-weight: 400;
+    font-size: 14px;
+}
+
+.myHosting-panel-text-info {
+    line-height: 8px;
+}
+
+.myHosting-panel-info-button {
+    background-color: white;
+    box-shadow: 0px 0px 4px #00000085;
+    border-radius: 20px;
+    padding: 12px;
+    margin: 9px;
+    display: flex;
+    flex-direction: column;
+}
+
+.myHosting-panel-info-button:hover {
+    background-color: #d9d9d952;
+}
+
+.myHosting-panel-info-button a {
+    text-decoration: none;
+    color: black;
+}
+
+.myHosting-panel-img {
+    display: flex;
+    margin-right: 20px;
+    height: 248px;
+}
+
+.myHosting-panel-img a img {
+    border-radius: 10px;
+    width: 498px;
+    object-fit: cover;
+}
+
+.myHosting-panel-img a img:hover {
+    transform: scale(1.01);
+}
+
+.myHosting-panel-text {
+    display: flex;
+    flex-direction: column;
+    margin-top: 6px;
+    line-height: 14px;
+}
+
+.filter {
+    width: 100%;
+    display: flex;
+    background-color: #f3f3f3a1;
+    border: solid;
+    border-color: #ffffff;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+}
+
+#my_hosting_form_name {
+    width: 397px;
+}
+
+.hosting_form_new_hosting_info {
+    border-radius: 15px;
+    border-width: 1px;
+    padding: 13px;
+    border-color: #00000036;
+    font-size: 15px;
+}
+
+form {
+    display: inline-flex;
+    flex-direction: row;
+    gap: 10px;
+    align-items: center;
+}
+
+
+.btn-hosting {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-hosting button {
+    background-color: #d7734e;
+    color: white;
+    border-width: 0px;
+    width: 100%;
+    border-radius: 9px;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 14px 18px;
+}
+
+.btn-hosting button:hover {
+    background-color: #d7734ece;
+}
+
+
+.account-panel-info-button {
+    display: flex;
+    gap: 14px;
+    justify-content: center;
+}
+
+.account-panel-info-button button:hover {
+    background-color: #a33e17;
+}
+
+.account-panel-info-button img {
+    width: 20px;
+}
+
+.account-panel-info-button button {
+    text-decoration: none;
+    color: black;
+    background-color: #e16636;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0px 0px 4px #ff6b6b6b;
+    border-radius: 10px;
+    padding: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: aliceblue;
+    width: 287px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Tablet and Mobile mode */
+@media (max-width: 1120px) {
+
+    .header {
+        padding-top: 133px;
+        padding-bottom: 41px;
+    }
+
+    .title h1 {
+        padding: 8px;
+    }
+
+    .filter {
+        padding: 10px;
+        flex-direction: column;
+    }
+
+    .search-form {
+        padding: 13px;
+    }
+
+    form {
+        flex-direction: column;
+    }
+
+    #my_hosting_form_name {
+        width: 100%;
+        padding: 13px 0px;
+    }
+
+    .hosting_form_new_hosting_info {
+        text-align: center;
+        width: 100%;
+    }
+
+    form {
+        align-items: unset;
+    }
+
+    .filter {
+        align-items: unset;
+    }
+
+    .btn-hosting {
+        padding: unset;
+    }
+
+    .btn-hosting button {
+        border-width: 0px;
+        width: 100%;
+        padding: 14px 18px;
+    }
+
+    .myHosting-panel {
+        display: flex;
+        flex-direction: column;
+        width: 90%;
+        justify-items: center;
+    }
+
+    .myHosting-panel-info {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .myHosting-panel-img {
+        display: flex;
+        width: 100%;
+        height: 309px;
+        justify-content: center;
+    }
+
+    .myHosting-panel-img a {
+        width: 98%;
+    }
+
+    .myHosting-panel-img a img {
+        border-radius: 10px;
+        width: 100%;
+        height: 100%;
+    }
+
+    .myHosting-panel-text {
+        margin-top: 13px;
+        padding: 13px;
+    }
+
+    /* Mobile */
+    @media (max-width: 700px) {
+
+        .myHosting-panel {
+            width: 100%;
+        }
+
+        .title h1 {
+            font-size: 36px;
+            text-align: center;
+            line-height: unset;
+        }
+
+        .menu-list {
+            margin: 10px 0px;
+            font-size: 16px;
+            display: flex;
+            width: 96%;
+            gap: 10px;
+            flex-direction: column;
+        }
+
+        .myHosting-panel-img a {
+            width: 100%;
+        }
+
+        .myHosting-panel-img a img {
+            border-radius: unset;
+        }
+    }
+}

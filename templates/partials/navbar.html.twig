@@ -1,0 +1,42 @@
+<html>
+	<body>
+		<div class="topnav">
+			<div class="topnav-menu">
+				<div class="logo-image">
+					<a href="/"><img src="/build/images/logo.png" alt="logo"></a>
+				</div>
+				<div class="btn-hamb">
+					<img src="/build/images/navbar/hamburger.svg" alt="hamburger">
+				</div>
+			</div>
+			<div class="menu-entry">
+
+				{% if entity_status == 2 and app.request.attributes.get('_route_params').page is defined and app.request.attributes.get('_route_params').page == "new-hosting" %}
+					<a class="special-button" onclick="return confirm('Retourner au menu principal ?\nToutes modifications seront annulées.');" href="{{ path('app_home') }}">Menu principal</a>
+				{% elseif entity_status == 2 %}
+					<a class="special-button" href="{{ path('app_account', {'page': 'new-hosting'}) }}">{{ 'navbar.new-hosting'|trans }}</a>
+				{% else %}
+					<a class="special-button" href="{{ path('app_hosting') }}">{{ 'navbar.hosting'|trans }}</a>
+				{% endif %}
+
+				<a href="{{ path('app_rentals') }}">{{ 'navbar.location'|trans }}</a>
+				<a href="{{ path('app_about_us') }}">{{ 'navbar.about'|trans }}</a>
+				{% if app.request.attributes.get('_route') != "app_login" and 
+				      app.request.attributes.get('_route') != "app_register" %}
+					<a href="{{ path('app_account', {'page': 'home'}) }}">{{ 'navbar.account'|trans }}</a>
+				{% endif %}
+				<div class="dropdown">
+					<a class="dropbtn" href="{{ path('app_lang', {'locale': app.request.locale}) }}">{{app.request.locale}}</a>
+					<div class="dropdown-content">
+						<a class="lang" href="{{ path('app_lang', {'locale': app.request.locale}) }}">{{app.request.locale}}</a>
+						{% for locale in locales %}
+							{% if locale != app.request.locale %}
+								<a href="{{ path('app_lang', {'locale': locale}) }}">{{ locale }}</a>
+							{% endif %}
+						{% endfor %}
+					</div>
+				</div>
+			</div>
+		</body>
+	</body>
+</html></div></body></html>

@@ -1,0 +1,215 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/home') }}
+{% endblock %}
+
+{% block body %}
+
+	<div class="header">
+		<div class="bgImg"></div>
+		<h1>
+			<span>{{ 'home.header.title'|trans }}</span>
+			<div class="text-border animated-text"></div>
+			<p>{{ 'home.header.p_text'|trans }}</p>
+			<div class="scroll-down"></div>
+		</div>
+	</h1>
+</div>
+
+<section class="menu01">
+	<div class="menu01-panel">
+		<div class="menu01-text-panel">
+			<img src="/build/images/home/leaf.svg" alt="leaf">
+			<span>{{ 'home.menu01.title01'|trans }}</span>
+			<p>{{ 'home.menu01.text01'|trans }}</p>
+		</div>
+		<div class="menu01-text-panel">
+			<img src="/build/images/home/chicken.svg" alt="chicken">
+			<span>{{ 'home.menu01.title02'|trans }}</span>
+			<p>{{ 'home.menu01.text02'|trans }}</p>
+		</div>
+		<div class="menu01-text-panel">
+			<img src="/build/images/home/protection.svg" alt="protection">
+			<span>{{ 'home.menu01.title03'|trans }}</span>
+			<p>{{ 'home.menu01.text03'|trans }}</p>
+		</div>
+	</div>
+	<div class="menu01-btn">
+		<a href="{{ path('app_rentals') }}">
+			<span>Je choisis mon logement</span>
+		</a>
+	</div>
+</section>
+<section class="menu02">
+	<div class="menu02-panel">
+		<div class="menu02-panel-info">
+			<span>Une sélection de pépites aux petits oignons</span>
+			<div class="border-spacing"></div>
+			<div class="menu02-panel-tpy-txt">
+				<p>Un &nbsp;<span>logement</span>&nbsp; Atypik Home est :</p>
+
+				<p><img src="/build/images/home/authentic.svg" alt="auth"><span>Authentique : &nbsp;</span>
+					avec un petit quelque chose en plus : charme, cadre…</p>
+
+				<p><img src="/build/images/home/leaf.svg" alt="leaf"><span>Éco-responsable : &nbsp;</span>
+					dans une démarche environnementale active</p>
+
+				<p><img src="/build/images/home/okay.svg" alt="okay"><span>Équitable : &nbsp;</span>
+					au juste prix compte tenu de la qualité</p>
+			</div>
+			<div class="menu02-btn">
+				<a href="{{ path('app_hosting') }}">
+					{% if entity_status == 2 %}
+						<span>Déposer un logement</span>
+					{% else %}
+						<span>Hébergeur ? Rejoignez-nous</span>
+					{% endif %}
+				</a>
+			</div>
+		</div>
+		<div class="menu02-img">
+			<img src="/build/images/home/menu02.jpeg" alt="house">
+		</div>
+	</div>
+</section>
+<section class="menu03">
+	<div class="menu03-panel1">
+		<div class="menu03-panel-info">
+			<span>Explorez l'Inhabituel</span>
+			<div class="border-spacing"></div>
+			<div class="menu03-panel-tpy-txt">
+				<span>Laissez-vous inspirer par notre collection diversifiée d'habitats alternatifs soigneusement choisis pour vous offrir des séjours inoubliables. Des cabanes nichées au cœur des forêts mystiques aux yourtes traditionnelles offrant un lien profond avec la nature, en passant par des lofts urbains créatifs dans les quartiers les plus artistiques des villes, nos options d'hébergement vous invitent à vivre autrement.</span>
+			</div>
+		</div>
+		<div class="menu03-img">
+			<img src="/build/images/home/menu03_1.jpg" alt="house">
+		</div>
+	</div>
+	<div class="menu03-panel2">
+		<div class="menu03-panel-info">
+			<span>Voyagez en Harmonie avec la Nature</span>
+			<div class="border-spacing"></div>
+			<div class="menu03-panel-tpy-txt">
+				<span>Échappez à la routine et plongez dans l'harmonie de la nature. Nos locations vous offrent des vues à couper le souffle, des jardins luxuriants et des environnements paisibles qui vous permettront de vous ressourcer complètement. Laissez le chant des oiseaux et le murmure des ruisseaux être votre réveil matinal.</span>
+			</div>
+		</div>
+		<div class="menu03-img">
+			<img src="/build/images/home/menu04.jpg" alt="house">
+		</div>
+	</div>
+</section>
+<section class="menu04">
+	<div class="menu04-panel">
+		<div class="menu04-panel-info">
+			<span>Réservez Votre Prochaine Aventure</span>
+			<div class="border-spacing"></div>
+			<div class="menu04-panel-tpy-txt">
+				<span>Commencez dès aujourd'hui votre aventure vers des destinations extraordinaires. Parcourez notre site pour explorer nos offres de locations et planifiez votre prochaine échappée. Chez Habitat Éclectique, nous croyons que le logement peut être une expérience à part entière. Rejoignez-nous dans cette aventure de découverte et de connexion avec des lieux qui reflètent votre individualité.</span>
+			</div>
+		</div>
+		<div class="menu04-img">
+			<img src="/build/images/home/menu04_1.jpg" alt="card">
+			<img src="/build/images/home/menu04_2.gif" alt="train">
+			<img src="/build/images/home/menu04_3.jpg" alt="house">
+		</div>
+		<div class="menu04-btn">
+			<a href="{{ path('app_rentals') }}">
+				<span>Je réserve maintenant</span>
+			</a>
+		</div>
+	</div>
+</section>
+<section class="FAQ">
+	<div class="FAQ-panel">
+		<div class="FAQ-panel-info">
+			<div class="FAQ-title">
+				<span>FAQ</span>
+				<div class="border-spacing"></div>
+			</div>
+			<div class="FAQ-panel-tpy-txt">
+				<h2>Qu'est-ce que Atypik Home propose ?</h2>
+				<p>
+					<span>Atypik Home</span>
+					vous propose une sélection soigneusement choisie d'habitats alternatifs uniques en
+					<span>France</span>
+					et en
+					<span>Europe</span>. De charmantes cabanes nichées dans la nature aux lofts artistiques en passant par des retraites écologiques, nous offrons des expériences
+					<span>authentiques</span>
+					pour rendre vos voyages
+					<span>inoubliables</span>.</p>
+			</div>
+			<div class="FAQ-panel-tpy-txt">
+				<h2>Comment réserver un hébergement ?</h2>
+				<p>La réservation est simple ! Parcourez notre site pour trouver
+					<span>l'hébergement</span>
+					qui vous inspire. Sélectionnez vos dates, confirmez votre
+					<span>réservation</span>
+					et préparez-vous à vivre une expérience unique. Notre équipe est également là pour vous guider à travers le processus si vous avez des questions.</p>
+			</div>
+			<div class="FAQ-panel-tpy-txt">
+				<h2>Qu'est-ce qui rend ces hébergements uniques ?</h2>
+				<p>Chaque
+					<span>hébergement</span>
+					que nous proposons a été choisi pour sa singularité et son caractère
+					<span>exceptionnel</span>. Nous mettons l'accent sur des lieux qui offrent une
+					<span>immersion</span>
+					dans la culture locale, la nature environnante et le charme unique de chaque région, vous permettant ainsi de vivre comme un habitant du coin.</p>
+			</div>
+			<div class="FAQ-panel-tpy-txt">
+				<h2>Est-ce que Atypik Home propose un service client ?</h2>
+				<p>Absolument. Notre équipe dévouée est là pour répondre à toutes vos questions et vous aider à choisir
+					<span>l'hébergement</span>
+					parfait pour vos besoins. Nous sommes là pour vous aider à créer des
+					<span>souvenirs inoubliables</span>
+					et vous offrir une expérience
+					<span>exceptionnelle</span>
+					à chaque étape.</p>
+			</div>
+			<div class="FAQ-panel-tpy-txt">
+				<h2>Proposez-vous des recommandations locales ?</h2>
+				<p>Oui, nous sommes fiers de partager nos connaissances locales avec vous. Chaque
+					<span>hébergement</span>
+					est accompagné de suggestions d'activités, de restaurants et de points d'intérêt locaux qui ne figurent peut-être pas dans les guides touristiques. Nous voulons que vous viviez une
+					<span>expérience</span>
+					immersive et
+					<span>enrichissante</span>.</p>
+			</div>
+			<div class="FAQ-panel-tpy-txt">
+				<h2>Comment puis-je me préparer pour mon séjour ?</h2>
+				<p>Une fois votre réservation confirmée, vous recevrez des informations détaillées sur
+					<span>l'hébergement</span>
+					et les environs. Cela vous aidera à planifier votre voyage, à connaître les commodités disponibles et à vous préparer à vivre une
+					<span>expérience unique</span>
+					et
+					<span>mémorable</span>.</p>
+			</div>
+			<div class="FAQ-panel-tpy-txt">
+				<h2>Atypik Home propose-t-il des offres spéciales ?</h2>
+				<p>
+					Oui, nous proposons régulièrement des
+					<span>offres spéciales</span>
+					et des réductions sur certains
+					<span>hébergements</span>. Assurez-vous de consulter notre section "Offres" sur le site pour découvrir les opportunités actuelles pour rendre votre séjour encore plus
+					<span>attractif</span>.</p>
+			</div>
+			<div class="FAQ-panel-tpy-txt">
+				<h2>Ou est localisé l'entreprise Atypik Home ?</h2>
+				<p>
+					<span>Atypik Home</span>
+					est basée dans la localité de
+					<span>Pierrefonds</span>
+					dans le
+					<span>département de l’Oise</span>.</p>
+			</div>
+		</div>
+	</div>
+</section>{% endblock %}

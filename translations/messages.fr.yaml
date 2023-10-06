@@ -1,0 +1,88 @@
+# Partials
+navbar:
+    hosting: "Hébergeur ? - Nous rejoindre"
+    new-hosting: "Déposer un logement"
+    location: "Nos hébergements"
+    about: "À propos de nous"
+    account: "Mon compte"
+
+footer:
+    description: "Découvrez une nouvelle manière de voyager avec Atypik Home. Explorez notre sélection d'habitats alternatifs uniques en France et à travers l'Europe, offrant des expériences authentiques et des séjours inoubliables. Plongez-vous dans la nature, l'art et la culture de chaque destination avec notre sélection de cabanes, yourtes, lofts urbains créatifs et plus encore. Réservez dès aujourd'hui et vivez chaque voyage différemment avec Atypik Home."
+    follow_us: "Suivez Atypik Home sur les réseaux"
+    about_title: "À propos"
+    about: "À propos de nous"
+    contact_help_title: "Aide & Contact"
+    host: "Hébergeur ? - Nous rejoindre"
+    contact: "N’hésitez pas à nous écrire à contact@atypik-home.com"
+    client: "Service client : 07 85 21 95 02 (Lun‑Ven 9‑17h)"
+    legal_title: "Légal"
+    cgvu: "Conditions générales de vente et d’utilisation"
+    mentions: "Mentions légales et confidentialité"
+    copyright: "Atypik Home. Tous droits réservés."
+    dev: "Développé avec le 💚 par RedStack Dev."
+# Partials end
+
+# Pages
+home:
+    title: "votre guide pour des escapades uniques et des souvenirs durables."
+    header:
+        title: "Des séjours qui font du bien."
+        p_text: "Plongez dans une collection d'habitats alternatifs uniques en France et en Europe."
+    menu01:
+        title01: "Éco-responsable"
+        title02: "Made in France"
+        title03: "Simple, rapide, sécurisé"
+        text01: "Les hébergeurs GreenGo sont sélectionnés et évalués sur plus de 100 critères écologiques."
+        text02: "Atypik Home est une entreprise française, avec des impôts payés en France et un service client disponible."
+        text03: "Des réservations en 3 clics, avec paiements sécurisés et garanties annulations."
+
+hosting:
+    firstname: "Prénom"
+    firstname_placeholder: "Quel est votre prénom ?"
+    email: "Email"
+    email_placeholder: "exemple@email.com"
+    phone: "Téléphone"
+    phone_placeholder: "0785219502"
+
+account:
+    home:
+        title: "Compte."
+        hostings: "Mes hébergements"
+        ads_desc: "Gérer mes hébergements déposées"
+        bookings: "Mes réservations"
+        bookings_desc: "Retrouver toutes vos réservations"
+        settings: "Paramètres"
+        settings_desc: "Compléter et modifier mes informations privées et préférences"
+        disconnect: "Se déconnecter"
+        disconnect_desc: "Déconnecter votre compte du site internet"
+
+    my_hostings:
+        title: "Mes hébergements."
+
+    booking:
+        title: "Mes réservations."
+
+    edit:
+        title: "Paramètre."
+        firstname: "Prénom"
+        lastname: "Nom"
+        description: "Description"
+        date_of_birth: "Date de naissance"
+        phone: "Téléphone"
+        username: "Nom d'utilisateur"
+        status: "Statut"
+        last_connection: "Dernière connexion"
+        account_creation: "Création du compte"
+        address: "Adresse"
+        zipcode: "Code postal"
+        city: "Ville"
+        country: "Pays"
+        email: "Email"
+        save_btn: "Sauvegarder les modifications"
+        delete_account_btn: "Supprimer le compte"
+        delete_account_message: "Êtes-vous sûr de vouloir supprimer cet utilisateur ?"
+        back_btn: "Mon compte"
+       
+security:
+    invalid_credentials: "Nom d'utilisateur ou mot de passe invalide"
+# Pages end

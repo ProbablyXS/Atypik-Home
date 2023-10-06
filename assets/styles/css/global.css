@@ -1,0 +1,90 @@
+body {
+    background-color: #d3d3d30d;
+    font-family: 'default', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'default';
+    src: url('/assets/styles/fonts/default.woff2') format("woff2");
+}
+
+:focus-visible {
+    outline: 2px solid orange;
+}
+
+/* CUSTOM SCROLLBAR */
+
+body::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.185);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #ffffff;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Hide scrollbar x for breadcrumb */
+ul::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar x,y for leftnav */
+div::-webkit-scrollbar {
+    display: none;
+}
+
+/* FOR FIREFOX ONLY */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #a9a9a978 #0000;
+}
+
+html {
+    scrollbar-color: #ffffff rgba(0, 0, 0, 0.217);
+}
+
+/* CUSTOM SCROLLBAR END */
+
+
+
+/* CUSTOM SELECTED TEXT */
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: #d5724e;
+}
+
+::selection {
+    color: white;
+    background: #d5724e;
+}
+
+/* CUSTOM SELECTED TEXT END */
+
+/* CUSTOM CHECKBOX */
+input[type="checkbox"]:checked {
+    background: #f46f52;
+    color: white;
+}
+
+
+input[type="checkbox"] {
+    cursor: pointer;
+    appearance: none;
+    transform: scale(0.6);
+    background-color: #16141429;
+    border: 0px solid white;
+    color: white;
+}
+
+/* CUSTOM CHECKBOX END */

@@ -1,0 +1,151 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/back') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/checkout') }}
+	{# DATE RANGE PICKER #}
+	<link
+	rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+{# DATE RANGE PICKER END #}
+{% endblock %}
+
+{% block javascripts %}
+	{{ encore_entry_script_tags('js/app') }}
+	{{ encore_entry_script_tags('js/components/navbar') }}
+	{{ encore_entry_script_tags('js/components/date_range_picker') }}
+
+{% endblock %}
+
+{% block body %}
+
+	{% set address = app.user.address ~ ', ' ~ app.user.zipcode ~ ', ' ~ app.user.city ~ ', ' ~ app.user.country.name %}
+	{% set tree_score = 1 %}
+
+	<div class="presentation">
+
+		{{ form_start(hostingForm) }}
+		<section class="header">
+			<div class="title">
+				<h1>Demande de réservation pour :
+					{{hosting.name}}</h1>
+				<div class="banner">
+					<span>{{hosting.types.name}}</span>
+					<span class="banner-surface">{{hosting.surface}}m²</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="description">
+			<div class="title">
+				<h2>Informations personnelles</h2>
+			</div>
+			<p>Prénom :
+				{{app.user.firstname}}</p>
+			<p>Nom :
+				{{app.user.lastname}}</p>
+			<p>Email :
+				{{app.user.email}}</p>
+			<p>Adresse :
+				{{address}}</p>
+			<p>Téléphone :
+				{{app.user.phone}}</p>
+		</section>
+
+		<section class="description">
+			<div class="title">
+				<h2>Informations réservation</h2>
+			</div>
+			<div class="question-panel-info-text">
+				<label>Dates</label>
+				<input class="hosting_form_new_hosting_info" type="text" name="daterange{{ hosting.id }}" id="daterange{{ hosting.id }}"/>
+			</div>
+			{{ form_row(hostingForm.number_of_peoples) }}
+		</section>
+
+		<section class="description">
+			<div class="title">
+				<h2>Message</h2>
+			</div>
+			<p>N’hésitez pas à dire un mot à {{hosting.users.firstname}} au sujet de votre réservation.</p>
+			<div class="host-img">
+				<img src="{{ images_dir ~ hosting.users.images.name }}" alt="house">
+				<span>{{hosting.users.firstname}}</span>
+			</div>
+			{{ form_row(hostingForm.comment) }}
+		</section>
+
+		<section class="rules">
+			<div class="title">
+				<h2>Conditions et règlement</h2>
+			</div>
+			<div class="rules-info">
+				<div class="rules-cancel">
+					<h2>Annulation</h2>
+					<span>Remboursement gratuit jusqu'à 1 jour avant l’arrivée, non remboursable ensuite.</span>
+				</div>
+				<div class="rules-internal">
+					<div class="rules-internal-title">
+						<h2>Règlement intérieur</h2>
+					</div>
+					<div class="rules-info-text">
+						<img src="/build/images/rentals_info/pets.svg" alt="pets">
+						{% if (hosting.petsAllowed) %}
+							<span>Animaux autorisé</span>
+						{% else %}
+							<span>Animaux non autorisé</span>
+						{% endif %}
+					</div>
+					<div class="rules-info-text">
+						<img src="/build/images/rentals_info/smoking.svg" alt="smoking">
+						{% if (hosting.smokingAllowed) %}
+							<span>Autorisé à fumer</span>
+						{% else %}
+							<span>Non fumeur</span>
+						{% endif %}
+					</div>
+				</div>
+				<div class="rules-schedule">
+					<h2>Horaires</h2>
+					<div class="rules-schedule-text">
+						<img src="/build/images/rentals_info/departure.svg" alt="departure">
+						<span>Arrivée :
+							{{ hosting.departureTime|date('H:i') }}
+							ou +</span>
+					</div>
+					<div class="rules-schedule-text">
+						<img src="/build/images/rentals_info/arrival.svg" alt="arrival">
+						<span>Départ :
+							{{ hosting.arrivalTime|date('H:i') }}
+							ou -</span>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section class="description">
+			<div class="title">
+				<h2>Paiement</h2>
+			</div>
+			<p>Montant à payer :
+				{{hosting.nightPrice}}
+				€
+			</p>
+
+			<div class="btn-checkout">
+				<button type="submit" class="btn-disabled" id="account-info-btn-save">Payer</button>
+			</div>
+
+		</section>
+		{{ form_errors(hostingForm) }}
+		{{ form_end(hostingForm) }}
+
+	</div>
+{% endblock %}

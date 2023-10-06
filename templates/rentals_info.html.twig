@@ -1,0 +1,282 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/back') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/rentals_info') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ encore_entry_script_tags('js/app') }}
+	{{ encore_entry_script_tags('js/components/navbar') }}
+	{{ encore_entry_script_tags('js/rentals_info') }}
+{% endblock %}
+
+{% block body %}
+
+	{% set address = hosting.address ~ ', ' ~ hosting.zipcode ~ ', ' ~ hosting.city ~ ', ' ~ hosting.country.name %}
+	{% set tree_score = 1 %}
+
+	<div class="presentation">
+		<section class="header">
+			<div class="localisation-info">
+				<img src="/build/images/rentals_info/localisation.svg" alt="localisation">
+				<span id="scrollButton">{{address}}</span>
+			</div>
+			<div class="title">
+				<h1>{{hosting.name}}</h1>
+				<div class="banner">
+					<span>{{hosting.types.name}}</span>
+					<span class="banner-surface">{{hosting.surface}}
+						m²</span>
+				</div>
+			</div>
+		</section>
+
+		<section class="images">
+			<div class="img-list">
+				{% for hostingImg in hosting.images %}
+					{% if hosting.images|first == hostingImg  %}
+						<div class="img-list-first">
+							<img id="myImg" src="{{ images_dir ~ hostingImg.name }}" alt="house">
+						</div>
+						{% else %}
+
+					{% endif %}
+				{% endfor %}
+
+				<div class="img-list-second">
+					{% set hostingImg = hosting.images %}
+
+					{% for i in 1..hosting.images|length -1 %}
+						{% if hosting.images|first and i <= 3 %}
+							<img id="myImg" src="{{ images_dir ~ hostingImg[i].name }}" alt="{{hostingImg[i].name}}">
+						{% elseif i == 4 %}
+							<div class="filter-img">
+								{% if hosting.images|length > 5 %}
+									<h2>+{{hosting.images|length - 5}}</h2>
+								{% endif %}
+								<img id="myImg" src="{{ images_dir ~ hostingImg[i].name }}" alt="{{hostingImg[i].name}}">
+							</div>
+						{% elseif i >= 5 %}
+							<div class="img-list-second hidden">
+								<img id="myImg" src="{{ images_dir ~ hostingImg[i].name }}" alt="hostingImg[i].name">
+							</div>
+						{% endif %}
+
+					{% endfor %}
+				</div>
+
+			</div>
+
+			<div id="myModal" class="modal">
+				<span class="close" onclick="closeModal()">&times;</span>
+				<a class="prev" onclick="changeImage(-1)">&#10094;</a>
+				<img id="img01" class="modal-content" alt="">
+				<a class="next" onclick="changeImage(1)">&#10095;</a>
+				<div id="caption"></div>
+			</div>
+		</section>
+
+		<section class="description">
+			<div class="title">
+				<h2>Prix</h2>
+			</div>
+			<p>A partir de : {{hosting.nightPrice}} € / nuit</p>
+			<div class="btn-checkout">
+				<a href="{{ "/checkout/" ~ hosting.name|lower|replace({' ':'-'}) }}">Réserver</a>
+			</div>
+		</section>
+
+		<section class="description">
+			<div class="title">
+				<h2>Description</h2>
+			</div>
+			<p>{{hosting.description}}</p>
+		</section>
+		<section class="durability">
+			<div class="title">
+				<h2>Durabilité</h2>
+			</div>
+			<div class="eco-score">
+				<p>Éco-score</p>
+				<div class="tree-score">
+					{% for i in 1..5 %}
+						{% if hosting.ecoScore >= tree_score  %}
+							<img src="/build/images/rentals_info/score_true.svg" alt="house">
+						{% else %}
+							<img src="/build/images/rentals_info/score_false.svg" alt="house">
+						{% endif %}
+						{% set tree_score = tree_score + 1 %}
+					{% endfor %}
+				</div>
+			</div>
+			<div class="durability-desc">
+				<p>L'éco-score, noté de 1 à 5 par les hôtes, est une évaluation qui mesure le niveau de respect de l'environnement d'un logement ou d'un établissement, où un score plus élevé indique une meilleure prise en compte des pratiques respectueuses de l'environnement.</p>
+			</div>
+		</section>
+		<section class="host">
+			<div class="title">
+				<h2>Vos hôtes</h2>
+			</div>
+			<div class="host-information">
+				<div class="host-img">
+					<img src="{{ images_dir ~ hosting.users.images.name }}" alt="house">
+					<span>{{hosting.users.firstname}}</span>
+					<a href="">Voir le profil</a>
+				</div>
+				<div class="host-desc">
+					<p>{{hosting.users.description}}</p>
+				</div>
+			</div>
+		</section>
+		<section id="map" class="localisation">
+			<div class="title">
+				<h2>Localisation et activités</h2>
+			</div>
+			<div class="localisation-map">
+				<iframe frameborder="0" scrolling="no" marginheight="0" marginwidth="0" src="https://maps.google.it/maps?q={{address}}&output=embed"></iframe>
+				<div class="localisation-activity">
+					<h2>Activités sur place</h2>
+					<p>{{hosting.suggestedActivities}}</p>
+				</div>
+			</div>
+		</section>
+
+		<section class="beds-and-bathrooms">
+			<div class="title">
+				<h2>Couchages et salles de bain</h2>
+			</div>
+			<div class="beds-and-bathrooms-info">
+				<div class="rules-info-text">
+					<img src="/build/images/rentals_info/peoples.svg" alt="peoples">
+					{% if (hosting.numberOfPeoples == 1) %}
+						<span>{{hosting.numberOfPeoples}}
+							personne</span>
+					{% else %}
+						<span>{{hosting.numberOfPeoples}}
+							personnes</span>
+					{% endif %}
+				</div>
+				<div class="rules-info-text">
+					<img src="/build/images/rentals_info/bedrooms.svg" alt="bedrooms">
+					{% if (hosting.numberOfBedrooms == 1) %}
+						<span>{{hosting.numberOfBedrooms}}
+							chambre</span>
+					{% else %}
+						<span>{{hosting.numberOfBedrooms}}
+							chambres</span>
+					{% endif %}
+				</div>
+				<div class="rules-info-text">
+					<img src="/build/images/rentals_info/bed.svg" alt="beds">
+					{% if (hosting.numberOfSleeps == 1) %}
+						<span>{{hosting.numberOfSleeps}}
+							Lit</span>
+					{% else %}
+						<span>{{hosting.numberOfSleeps}}
+							Lits</span>
+					{% endif %}
+				</div>
+				<div class="rules-info-text">
+					<img src="/build/images/rentals_info/bathrooms.svg" alt="bathrooms">
+					{% if (hosting.numberOfBathrooms == 1) %}
+						<span>{{hosting.numberOfBathrooms}}
+							Salle de bain</span>
+					{% else %}
+						<span>{{hosting.numberOfBathrooms}}
+							Salle de bains</span>
+					{% endif %}
+				</div>
+			</div>
+		</section>
+
+		<section class="equipments">
+			<div class="title">
+				<h2>Équipements</h2>
+			</div>
+			<div class="beds-and-bathrooms-info">
+				<div class="rules-info-text">
+					<img src="/build/images/rentals_info/electricity.svg" alt="electricity">
+					{% if (hosting.electricity == 1) %}
+						<span>Electricité disponible</span>
+					{% else %}
+						<span>Electricité non disponible</span>
+					{% endif %}
+				</div>
+				<div class="rules-info-text">
+					<img src="/build/images/rentals_info/parking.svg" alt="parking">
+					{% if (hosting.Wifi == 1) %}
+						<span>Parking disponible</span>
+					{% else %}
+						<span>Parking non disponible</span>
+					{% endif %}
+				</div>
+				<div class="rules-info-text">
+					<img src="/build/images/rentals_info/wi-fi.svg" alt="Wi-Fi">
+					{% if (hosting.Wifi == 1) %}
+						<span>Wi-fi disponible</span>
+					{% else %}
+						<span>Wi-fi non disponible</span>
+					{% endif %}
+				</div>
+			</div>
+		</section>
+
+		<section class="rules">
+			<div class="title">
+				<h2>Conditions et règlement</h2>
+			</div>
+			<div class="rules-info">
+				<div class="rules-cancel">
+					<h2>Annulation</h2>
+					<span>Remboursement gratuit jusqu'à 1 jour avant l’arrivée, non remboursable ensuite.</span>
+				</div>
+				<div class="rules-internal">
+					<div class="rules-internal-title">
+						<h2>Règlement intérieur</h2>
+					</div>
+					<div class="rules-info-text">
+						<img src="/build/images/rentals_info/pets.svg" alt="pets">
+						{% if (hosting.petsAllowed) %}
+							<span>Animaux autorisé</span>
+						{% else %}
+							<span>Animaux non autorisé</span>
+						{% endif %}
+					</div>
+					<div class="rules-info-text">
+						<img src="/build/images/rentals_info/smoking.svg" alt="smoking">
+						{% if (hosting.smokingAllowed) %}
+							<span>Autorisé à fumer</span>
+						{% else %}
+							<span>Non fumeur</span>
+						{% endif %}
+					</div>
+				</div>
+				<div class="rules-schedule">
+					<h2>Horaires</h2>
+					<div class="rules-schedule-text">
+						<img src="/build/images/rentals_info/departure.svg" alt="departure">
+						<span>Arrivée :
+							{{ hosting.departureTime|date('H:i') }}
+							ou +</span>
+					</div>
+					<div class="rules-schedule-text">
+						<img src="/build/images/rentals_info/arrival.svg" alt="arrival">
+						<span>Départ :
+							{{ hosting.arrivalTime|date('H:i') }}
+							ou -</span>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+
+</div></section>{% endblock %}

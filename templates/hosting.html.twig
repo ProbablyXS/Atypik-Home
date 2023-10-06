@@ -1,0 +1,99 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/hosting') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ encore_entry_script_tags('js/app') }}
+	{{ encore_entry_script_tags('js/components/navbar') }}
+	{{ encore_entry_script_tags('js/hosting') }}
+{% endblock %}
+
+{% block body %}
+	<div class="header">
+		<div class="title">
+			<h1>Cher(e)s hôtes, construisons l’alternative ensemble !</h1>
+		</div>
+		<div class="header-text">
+			<p>Nous rejoindre, c’est contribuer à la promotion d’un tourisme local, authentique et responsable. C’est aussi construire ensemble une alternative française et équitable aux grandes plateformes américaines. Si vous vous reconnaissez dans cette mission et dans les critères ci-dessous, rejoignez nous !</p>
+		</div>
+		<div class="btn-join-us" id="scrollButton">
+			<button>Demande d’inscription</button>
+		</div>
+	</div>
+
+	<section class="menu01">
+
+		<div class="menu-title">
+			<h1>Nos critères de sélection</h1>
+		</div>
+		<div class="menu01-panel-pt1">
+			<div class="menu01-panel-img">
+				<img src="/build/images/hosting/menu01_1.avif" alt="house">
+			</div>
+			<div class="menu01-panel-text">
+				<h3>Vous proposez des hébergements de
+					<span>qualité</span>
+				</h3>
+				<p>Authenticité, cadre, charme, vos hébergements possèdent ce « petit quelque chose » de spécial ! Nous sélectionnons généralement des logements avec une note supérieure à 9/10 ou 4,5/5, sans que ce soit obligatoire car une note ne dit pas tout bien sûr !</p>
+			</div>
+		</div>
+		<div class="menu01-panel-pt2">
+			<div class="menu01-panel-img">
+				<img src="/build/images/hosting/menu01_2.avif" alt="house">
+			</div>
+			<div class="menu01-panel-text">
+				<h3>Vous faites votre part pour
+					<span>l’environnement</span>
+				</h3>
+				<p>Simplement à votre échelle. Le respect de l’environnement est important pour vous et vous avez déjà engagé des gestes éco-responsables pour vos logements. Pas de conditions strictes et pas besoin d’être parfait cela dit, nous ne le sommes pas.																																																																																																				Besoin d’aide dans la transition écologique de votre établissement ? Découvrez
+					<span>nos offres d’accompagnement</span>.</p>
+			</div>
+		</div>
+		<div class="menu01-panel-pt3">
+			<div class="menu01-panel-img">
+				<img src="/build/images/hosting/menu01_3.jpg" alt="house">
+			</div>
+			<div class="menu01-panel-text">
+				<h3>Vous partagez nos
+					<span>valeurs</span>
+				</h3>
+				<p>Authenticité, cadre, charme, vos hébergements possèdent ce « petit quelque chose » de spécial ! Nous sélectionnons généralement des logements avec une note supérieure à 9/10 ou 4,5/5, sans que ce soit obligatoire car une note ne dit pas tout bien sûr !</p>
+			</div>
+		</div>
+	</div>
+
+</section>
+
+<section class="menu02" id="section1">
+
+	<div class="menu02-title">
+		<h1>Demande d’inscription</h1>
+	</div>
+
+	<div class="menu02-panel">
+		<p>C’est gratuit, sans engagement. Nous proposons le même niveau de fonctionnalités que les grandes plateformes : synchronisation de calendriers, paiement etc. Nous nous rémunérons uniquement si vous avez des réservations, avec une commission équitable (12%). Bref, rien à perdre, tout à gagner !</p>
+		<div class="menu02-panel-info">
+			<p>Merci de nous envoyer un maximum d’informations pour que nous puissions traiter au mieux votre demande.</p>
+		</div>
+		<form method="post" class="hosting">
+			{{ form_start(hostingForm) }}
+			{{ form_end(hostingForm) }}
+		</form>
+		<div class="question">
+			<h3>Une question ?</h3>
+			<p>Envoyez-nous un petit email à
+				<a href="mailto:contact@atypik-home.com?subject=Question%20concernant%20mon%20inscription%20hôte%20chez%20Atypik Home">contact@atypik-home.com</a>, on vous répond avec plaisir !</p>
+		</div>
+	</div>
+</section>
+{% endblock %}

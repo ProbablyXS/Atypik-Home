@@ -1,0 +1,24 @@
+{# templates/bundles/TwigBundle/Exception/error404.html.twig #}
+{% extends 'base.html.twig' %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/errors/error.css') }}
+{% endblock %}
+
+{% block body %}
+
+	<section class="error">
+		<div class="information">
+			<img src="/build/images/errors/404.svg" alt="landscape">
+			<h2>Page non trouvée !</h2>
+			<p>La page demandée n'a pas pu être localisée. Vérifiez qu'il n'y a pas de faute d'orthographe dans l'URL ou retourner sur la page d'accueil</p>
+		</a>
+	</p>
+	<div class="btn">
+		<a class="btn-1" href="{{ path('app_default') }}">Retourner sur la page d'accueil</a>
+	</div>
+</div></section>{% endblock %}

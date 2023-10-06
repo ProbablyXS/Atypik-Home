@@ -1,0 +1,52 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/account/home') }}
+{% endblock %}
+
+{% block body %}
+	<section class="account">
+		<div class="account-title">
+			<h1>{{ 'account.home.title'|trans }}</h1>
+		</div>
+		<div class="account-panel">
+			<div class="account-panel-info">
+				<a href="{{ path('app_account', {'page': 'my-hostings'}) }}">
+					<img src="/build/images/account/home/ad.png" alt="ad">
+					<span>{{ 'account.home.hostings'|trans }}</span>
+					<p>{{ 'account.home.ads_desc'|trans }}</p>
+				</a>
+			</div>
+			<div class="account-panel-info">
+				<a href="{{ path('app_account', {'page': 'booking'}) }}">
+					<img src="/build/images/account/home/reservation.png" alt="reservation">
+					<span>{{ 'account.home.bookings'|trans }}</span>
+					<p>{{ 'account.home.bookings_desc'|trans }}</p>
+				</a>
+			</div>
+			<div class="account-panel-info">
+				<a href="{{ path('app_account', {'page': 'edit'}) }}">
+					<img src="/build/images/account/home/option.png" alt="option">
+					<span>{{ 'account.home.settings'|trans }}</span>
+					<p>{{ 'account.home.settings_desc'|trans }}</p>
+				</a>
+			</div>
+
+			<div class="account-panel-info">
+				<a href="{{ path('app_logout') }}">
+					<img src="/build/images/account/home/exit.png" alt="exit">
+					<span>{{ 'account.home.disconnect'|trans }}</span>
+					<p>{{ 'account.home.disconnect_desc'|trans }}</p>
+				</a>
+			</div>
+		</div>
+	</section>
+{% endblock %}

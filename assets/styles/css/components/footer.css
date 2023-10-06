@@ -1,0 +1,160 @@
+.footer {
+    overflow: hidden;
+    background-color: #111827;
+    color: white;
+    padding: 1px 34px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.footer p {
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 15px;
+    text-align: center;
+}
+
+.footer a {
+    color: #000000;
+    text-align: center;
+    text-decoration: none;
+    padding: 10px;
+    font-size: 30px;
+    display: inline-flex;
+}
+
+.footer a:hover {
+    color: #ba4014;
+}
+
+.footer a.active {
+    background-color: #04AA6D;
+    color: white;
+}
+
+.logo-image-footer a:hover {
+    background-color: transparent;
+}
+
+.logo-image-footer img {
+    width: 100px;
+}
+
+.logo-image-footer {
+    margin-top: 14px;
+    filter: blur(0.8px) grayscale(0.3) opacity(0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.follow-us {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-bottom: 12px;
+    align-items: center;
+}
+
+.social-btn a:hover {
+    border-radius: 24px;
+    transition: 10ms;
+    background-color: currentcolor;
+}
+
+.separator {
+    border-top-color: #ffffff24;
+    border-top-style: solid;
+    border-width: 2px;
+}
+
+.every-link {
+    justify-content: space-between;
+    display: grid;
+    gap: 20px;
+    grid-template-columns: repeat(3,minmax(0,1fr));
+    padding: 20px 0px;
+    align-items: start;
+    justify-items: stretch;
+}
+
+.every-link-panel {
+    font-size: 1.5rem;
+    width: 96%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.every-link-panel-title {
+    margin-bottom: 20px;
+    color: #ff9974;
+}
+
+.every-link-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.every-link-text a {
+    color: white;
+    font-size: 1.0rem;
+    padding: unset;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.every-link-text a:hover {
+    color: rgba(255, 255, 255, 0.407);
+}
+
+.copyright {
+    display: flex;
+    padding: 24px 0px;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+    .every-link {
+        display: flex;
+        gap: 20px;
+        padding: 20px 0px;
+        align-items: flex-start;
+        justify-items: stretch;
+        flex-direction: column;
+    }
+    
+    .every-link-panel {
+        width: 88%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .every-link {
+        display: flex;
+        gap: 20px;
+        padding: 20px 0px;
+        align-items: flex-start;
+        justify-items: stretch;
+        flex-direction: column;
+    }
+    
+    .every-link-panel {
+        width: 88%;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    
+    .copyright {
+        flex-direction: column;
+        gap: unset;
+    }
+
+}

@@ -1,0 +1,58 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/login') }}
+{% endblock %}
+
+{% block body %}
+	<form method="post" class="login">
+		{% if app.user %}
+			<div class="mb-3">
+				You are logged in as
+				{{ app.user.userIdentifier }},
+				<a href="{{ path('app_logout') }}">Logout</a>
+			</div>
+		{% endif %}
+		<div class="login-panel">
+			<div class="login-panel-title">
+				<h1>Bonjour !</h1>
+				<p>Connectez-vous pour découvrir toutes nos fonctionnalités.</p>
+			</div>
+			<div class="login-panel-info">
+				<div class="login-panel-info-username">
+					<label for="inputUsername">Nom d'utilisateur</label>
+					<input type="text" value="{{ last_username }}" name="username" id="inputUsername" class="form-control" autocomplete="username" required autofocus>
+				</div>
+				<div class="login-panel-info-username">
+					<label for="inputPassword">Mot de passe</label>
+					<input type="password" name="password" id="inputPassword" class="form-control" autocomplete="current-password" required>
+				</div>
+				<input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}">
+				<div class="login-panel-info-forgetpassword">
+					<a href="" for="inputPassword">Mot de passe oublié</a>
+				</div>
+			</div>
+			<button class="sbm-button" type="submit">
+				Connexion
+			</button>
+			<p>Envie de nous rejoindre ?
+				<a href="{{ path('app_register') }}" for="inputPassword">Créer un compte</a>
+			</p>
+
+			{% if error %}
+				<div class="alert alert-danger">
+					{{ 'security.invalid_credentials'|trans }}
+				</div>
+			{% endif %}
+		</div>
+	</form>
+{% endblock %}
+{% block footer %}{% endblock %}

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>
+			{% block title %}Atypik Home
+			{% endblock %}
+		</title>
+		<meta name="description" content="Découvrez une nouvelle manière de voyager avec Atypik Home. Explorez notre sélection d'habitats alternatifs uniques en France et à travers l'Europe, offrant des expériences authentiques et des séjours inoubliables. Plongez-vous dans la nature, l'art et la culture de chaque destination avec notre sélection de cabanes, yourtes, lofts urbains créatifs et plus encore. Réservez dès aujourd'hui et vivez chaque voyage différemment avec Atypik Home.">
+		<meta name="author" content="Atypik Home">
+		<meta name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1"/>
+		<meta charset="utf-8">
+		<meta name="theme-color" content="#dfa262"/>
+		<link rel="icon" href="/build/images/favicon.ico">
+		{% block stylesheets %}
+			{{ encore_entry_link_tags('css/global') }}
+			{{ encore_entry_link_tags('css/components/loader') }}
+			{{ encore_entry_link_tags('css/components/navbar') }}
+			{{ encore_entry_link_tags('css/components/footer') }}
+		{% endblock %}
+
+		{% block javascripts %}
+			{{ encore_entry_script_tags('js/app') }}
+			{{ encore_entry_script_tags('js/components/navbar') }}
+
+			<!-- Google tag (gtag.js) -->
+			<script async src="https://www.googletagmanager.com/gtag/js?id=G-V7SZXWSJP4"></script>
+			<script>
+				window.dataLayer = window.dataLayer || [];
+function gtag() {
+dataLayer.push(arguments);
+}
+gtag('js', new Date());
+gtag('config', 'G-V7SZXWSJP4');
+			</script>
+
+			<!-- axeptio SDK COOKIES 13 MONTHS -->
+			<script>
+				window.axeptioSettings = {
+clientId: "6505b7e9b9210a37ee254b08",
+cookiesVersion: "atypik-home-fr"
+};
+
+(function (d, s) {
+var t = d.getElementsByTagName(s)[0],
+e = d.createElement(s);
+e.async = true;
+e.src = "//static.axept.io/sdk.js";
+t.parentNode.insertBefore(e, t);
+})(document, "script");
+			</script>
+
+		{% endblock %}
+	</head>
+
+
+	<body>
+		{% block nav %}
+			{% include("partials/navbar.html.twig") %}
+		{% endblock %}
+
+		{% block body %}{% endblock %}
+
+		{% block footer %}
+			{% include("partials/footer.html.twig") %}
+		{% endblock %}
+	</body>
+</html>

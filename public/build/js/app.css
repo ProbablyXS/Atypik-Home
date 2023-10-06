@@ -1,0 +1,95 @@
+/*!*********************************************************************************************************************!*\
+  !*** css ./node_modules/css-loader/dist/cjs.js??ruleSet[1].rules[1].oneOf[1].use[1]!./assets/styles/css/global.css ***!
+  \*********************************************************************************************************************/
+body {
+    background-color: #d3d3d30d;
+    font-family: 'default', Helvetica, Arial, sans-serif;
+    font-weight: 500;
+    font-size: 12px;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+@font-face {
+    font-family: 'default';
+    src: url(/build/fonts/default.9da2eb1e.woff2) format("woff2");
+}
+
+:focus-visible {
+    outline: 2px solid orange;
+}
+
+/* CUSTOM SCROLLBAR */
+
+body::-webkit-scrollbar {
+    width: 8px;
+    border-radius: 8px;
+    background: rgba(0, 0, 0, 0.185);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: #ffffff;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+/* Hide scrollbar x for breadcrumb */
+ul::-webkit-scrollbar {
+    display: none;
+}
+
+/* Hide scrollbar x,y for leftnav */
+div::-webkit-scrollbar {
+    display: none;
+}
+
+/* FOR FIREFOX ONLY */
+html {
+    scrollbar-width: thin;
+    scrollbar-color: #a9a9a978 #0000;
+}
+
+html {
+    scrollbar-color: #ffffff rgba(0, 0, 0, 0.217);
+}
+
+/* CUSTOM SCROLLBAR END */
+
+
+
+/* CUSTOM SELECTED TEXT */
+
+::-moz-selection {
+    /* Code for Firefox */
+    color: white;
+    background: #d5724e;
+}
+
+::selection {
+    color: white;
+    background: #d5724e;
+}
+
+/* CUSTOM SELECTED TEXT END */
+
+/* CUSTOM CHECKBOX */
+input[type="checkbox"]:checked {
+    background: #f46f52;
+    color: white;
+}
+
+
+input[type="checkbox"] {
+    cursor: pointer;
+    appearance: none;
+    transform: scale(0.6);
+    background-color: #16141429;
+    border: 0px solid white;
+    color: white;
+}
+
+/* CUSTOM CHECKBOX END */
+
+/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoianMvYXBwLmNzcyIsIm1hcHBpbmdzIjoiOzs7QUFBQTtJQUNJLDJCQUEyQjtJQUMzQixvREFBb0Q7SUFDcEQsZ0JBQWdCO0lBQ2hCLGVBQWU7SUFDZixTQUFTO0lBQ1Qsa0JBQWtCO0FBQ3RCOztBQUVBO0lBQ0ksc0JBQXNCO0lBQ3RCLDREQUE4RDtBQUNsRTs7QUFFQTtJQUNJLHlCQUF5QjtBQUM3Qjs7QUFFQSxxQkFBcUI7O0FBRXJCO0lBQ0ksVUFBVTtJQUNWLGtCQUFrQjtJQUNsQixnQ0FBZ0M7QUFDcEM7O0FBRUE7SUFDSSxtQkFBbUI7QUFDdkI7O0FBRUE7SUFDSSxnQkFBZ0I7QUFDcEI7O0FBRUEsb0NBQW9DO0FBQ3BDO0lBQ0ksYUFBYTtBQUNqQjs7QUFFQSxtQ0FBbUM7QUFDbkM7SUFDSSxhQUFhO0FBQ2pCOztBQUVBLHFCQUFxQjtBQUNyQjtJQUNJLHFCQUFxQjtJQUNyQixnQ0FBZ0M7QUFDcEM7O0FBRUE7SUFDSSw2Q0FBNkM7QUFDakQ7O0FBRUEseUJBQXlCOzs7O0FBSXpCLHlCQUF5Qjs7QUFFekI7SUFDSSxxQkFBcUI7SUFDckIsWUFBWTtJQUNaLG1CQUFtQjtBQUN2Qjs7QUFFQTtJQUNJLFlBQVk7SUFDWixtQkFBbUI7QUFDdkI7O0FBRUEsNkJBQTZCOztBQUU3QixvQkFBb0I7QUFDcEI7SUFDSSxtQkFBbUI7SUFDbkIsWUFBWTtBQUNoQjs7O0FBR0E7SUFDSSxlQUFlO0lBQ2YsZ0JBQWdCO0lBQ2hCLHFCQUFxQjtJQUNyQiwyQkFBMkI7SUFDM0IsdUJBQXVCO0lBQ3ZCLFlBQVk7QUFDaEI7O0FBRUEsd0JBQXdCLEMiLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9hc3NldHMvc3R5bGVzL2Nzcy9nbG9iYWwuY3NzIl0sInNvdXJjZXNDb250ZW50IjpbImJvZHkge1xuICAgIGJhY2tncm91bmQtY29sb3I6ICNkM2QzZDMwZDtcbiAgICBmb250LWZhbWlseTogJ2RlZmF1bHQnLCBIZWx2ZXRpY2EsIEFyaWFsLCBzYW5zLXNlcmlmO1xuICAgIGZvbnQtd2VpZ2h0OiA1MDA7XG4gICAgZm9udC1zaXplOiAxMnB4O1xuICAgIG1hcmdpbjogMDtcbiAgICBvdmVyZmxvdy14OiBoaWRkZW47XG59XG5cbkBmb250LWZhY2Uge1xuICAgIGZvbnQtZmFtaWx5OiAnZGVmYXVsdCc7XG4gICAgc3JjOiB1cmwoJy9hc3NldHMvc3R5bGVzL2ZvbnRzL2RlZmF1bHQud29mZjInKSBmb3JtYXQoXCJ3b2ZmMlwiKTtcbn1cblxuOmZvY3VzLXZpc2libGUge1xuICAgIG91dGxpbmU6IDJweCBzb2xpZCBvcmFuZ2U7XG59XG5cbi8qIENVU1RPTSBTQ1JPTExCQVIgKi9cblxuYm9keTo6LXdlYmtpdC1zY3JvbGxiYXIge1xuICAgIHdpZHRoOiA4cHg7XG4gICAgYm9yZGVyLXJhZGl1czogOHB4O1xuICAgIGJhY2tncm91bmQ6IHJnYmEoMCwgMCwgMCwgMC4xODUpO1xufVxuXG5ib2R5Ojotd2Via2l0LXNjcm9sbGJhci10aHVtYiB7XG4gICAgYmFja2dyb3VuZDogI2ZmZmZmZjtcbn1cblxuYm9keTo6LXdlYmtpdC1zY3JvbGxiYXItdGh1bWI6aG92ZXIge1xuICAgIGJhY2tncm91bmQ6ICM1NTU7XG59XG5cbi8qIEhpZGUgc2Nyb2xsYmFyIHggZm9yIGJyZWFkY3J1bWIgKi9cbnVsOjotd2Via2l0LXNjcm9sbGJhciB7XG4gICAgZGlzcGxheTogbm9uZTtcbn1cblxuLyogSGlkZSBzY3JvbGxiYXIgeCx5IGZvciBsZWZ0bmF2ICovXG5kaXY6Oi13ZWJraXQtc2Nyb2xsYmFyIHtcbiAgICBkaXNwbGF5OiBub25lO1xufVxuXG4vKiBGT1IgRklSRUZPWCBPTkxZICovXG5odG1sIHtcbiAgICBzY3JvbGxiYXItd2lkdGg6IHRoaW47XG4gICAgc2Nyb2xsYmFyLWNvbG9yOiAjYTlhOWE5NzggIzAwMDA7XG59XG5cbmh0bWwge1xuICAgIHNjcm9sbGJhci1jb2xvcjogI2ZmZmZmZiByZ2JhKDAsIDAsIDAsIDAuMjE3KTtcbn1cblxuLyogQ1VTVE9NIFNDUk9MTEJBUiBFTkQgKi9cblxuXG5cbi8qIENVU1RPTSBTRUxFQ1RFRCBURVhUICovXG5cbjo6LW1vei1zZWxlY3Rpb24ge1xuICAgIC8qIENvZGUgZm9yIEZpcmVmb3ggKi9cbiAgICBjb2xvcjogd2hpdGU7XG4gICAgYmFja2dyb3VuZDogI2Q1NzI0ZTtcbn1cblxuOjpzZWxlY3Rpb24ge1xuICAgIGNvbG9yOiB3aGl0ZTtcbiAgICBiYWNrZ3JvdW5kOiAjZDU3MjRlO1xufVxuXG4vKiBDVVNUT00gU0VMRUNURUQgVEVYVCBFTkQgKi9cblxuLyogQ1VTVE9NIENIRUNLQk9YICovXG5pbnB1dFt0eXBlPVwiY2hlY2tib3hcIl06Y2hlY2tlZCB7XG4gICAgYmFja2dyb3VuZDogI2Y0NmY1MjtcbiAgICBjb2xvcjogd2hpdGU7XG59XG5cblxuaW5wdXRbdHlwZT1cImNoZWNrYm94XCJdIHtcbiAgICBjdXJzb3I6IHBvaW50ZXI7XG4gICAgYXBwZWFyYW5jZTogbm9uZTtcbiAgICB0cmFuc2Zvcm06IHNjYWxlKDAuNik7XG4gICAgYmFja2dyb3VuZC1jb2xvcjogIzE2MTQxNDI5O1xuICAgIGJvcmRlcjogMHB4IHNvbGlkIHdoaXRlO1xuICAgIGNvbG9yOiB3aGl0ZTtcbn1cblxuLyogQ1VTVE9NIENIRUNLQk9YIEVORCAqLyJdLCJuYW1lcyI6W10sInNvdXJjZVJvb3QiOiIifQ==*/

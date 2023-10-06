@@ -1,0 +1,379 @@
+.header {
+    display: flex;
+    flex-direction: column;
+    padding-top: 117px;
+    align-items: center;
+}
+
+.title h1 {
+    display: flex;
+    font-size: 2.2rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.title h1::after {
+    content: "";
+    margin-top: 8px;
+    border-bottom: 3px solid rgb(255 143 98);
+    display: block;
+    width: 40px;
+    transform: translateY(50%);
+}
+
+.header-text {
+    display: flex;
+    max-width: 870px;
+    font-weight: 400;
+    font-size: large;
+    flex-direction: column;
+    align-items: center;
+}
+
+.btn-join-us {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-join-us button {
+    background-color: #d7734e;
+    color: white;
+    border-width: 0px;
+    border-radius: 9px;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 14px 18px;
+}
+
+.btn-join-us button:hover {
+    background-color: #e76c40;
+}
+
+.menu01 {
+    display: flex;
+    align-items: center;
+    margin-top: 35px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.menu-title {
+    font-size: 1.1rem;
+}
+
+.image-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+    justify-content: center;
+    justify-items: center;
+    gap: 10px;
+}
+
+.image-container img {
+    width: 160px;
+    height: 160px;
+    border-radius: 137px;
+    object-fit: cover;
+}
+
+.center-single-image {
+    grid-template-columns: repeat(1, 1fr);
+}
+
+.favorite {
+    border: solid;
+    border-color: #d7734e;
+}
+
+.center-double-image {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.vertical-resize {
+    resize: vertical;
+}
+
+.description {
+    height: 226px;
+}
+
+.menu01-panel {
+    width: 632px;
+    box-shadow: 0px 0px 4px #00000017;
+    padding: 16px;
+    border-radius: 25px;
+    background-color: white;
+    margin-top: 24px;
+}
+
+.menu01-panel-img {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu01-panel-img img {
+    width: 100%;
+    color: transparent;
+    object-fit: cover;
+    height: 525px;
+}
+
+.menu01-panel-text {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu01-panel-text h3 {
+    font-size: 25px;
+    width: 90%;
+}
+
+.menu01-panel-text p {
+    font-weight: 400;
+    width: 90%;
+    font-size: 18px;
+}
+
+.menu01-panel-text span {
+    color: #d7734e;
+    font-weight: bold;
+}
+
+.menu02 {
+    display: flex;
+    align-items: center;
+    margin-top: 56px;
+    margin-bottom: 89px;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.menu02-panel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 642px;
+    justify-content: center;
+}
+
+.menu02-title {
+    font-size: 1.5rem;
+}
+
+.menu02-panel p {
+    font-weight: 400;
+    font-size: 18px;
+}
+
+.menu02-panel-info p {
+    font-weight: 400;
+    font-size: 18px;
+    padding: 22px;
+    background-color: #e5e5e54a;
+    border-radius: 17px;
+}
+
+.hosting {
+    width: 100%;
+    padding-bottom: 25px;
+}
+
+.btn-hosting {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-hosting button {
+    background-color: #d7734e;
+    color: white;
+    border-width: 0px;
+    width: 100%;
+    border-radius: 9px;
+    font-size: 18px;
+    cursor: pointer;
+    padding: 14px 18px;
+}
+
+.btn-hosting button:hover {
+    background-color: #d7734ece;
+}
+
+.question {
+    font-size: 22px;
+}
+
+.question p {
+    font-weight: 450;
+    font-size: 16px;
+}
+
+.question a {
+    font-weight: bold;
+    color: black;
+    text-decoration: none;
+}
+
+.question a:hover {
+    text-decoration: underline;
+}
+
+.hosting_form_new_hosting_info {
+    border-radius: 15px;
+    border-width: 1px;
+    display: flex;
+    padding: 13px;
+    border-color: #00000036;
+    gap: 10px;
+    font-size: 15px;
+    align-items: center;
+}
+
+.hosting_form_new_hosting_select {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.hosting_form_new_hosting_select select {
+    border-radius: 15px;
+    padding: 13px;
+    border-width: 1px;
+    border-color: #00000036;
+    font-size: 15px;
+}
+
+
+
+.question-panel-info-text {
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 6px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.question-panel-info-text label {
+    padding-bottom: 8px;
+}
+
+.question-panel-info-text span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.question-panel-info-text input {
+    border-radius: 10px;
+    padding: 13px;
+    border-width: 1px;
+    font-size: 15px;
+    border-color: #00000036;
+}
+
+.question-panel-info-text input:focus-visible {
+    outline: 2px solid orange;
+}
+
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+    .title h1 {
+        font-size: 1.6rem;
+        padding: 10px 45px;
+        text-align: center;
+    }
+
+    .header-text {
+        width: 85%;
+        text-align: center;
+    }
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .header {
+        text-align: center;
+    }
+
+    form {
+        padding: 10px;
+    }
+
+    .header-text {
+        width: 88%;
+    }
+
+    .menu01-panel {
+        width: 100%;
+    }
+
+    .title h1 {
+        font-size: 1.6rem;
+        padding: 10px 13px;
+        text-align: center;
+    }
+
+    .image-container {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .image-container img {
+        width: 100%;
+        height: 160px;
+        border-radius: unset;
+        object-fit: cover;
+    }
+
+    .menu-title {
+        text-align: center;
+    }
+
+    .menu01-panel-text h3 {
+        text-align: center;
+    }
+
+    .menu01-panel-pt1 {
+        flex-direction: column;
+    }
+
+    .menu01-panel-pt2 {
+        flex-direction: column;
+    }
+
+    .menu01-panel-pt3 {
+        flex-direction: column;
+    }
+
+    .menu02 {
+        padding: unset;
+    }
+
+    .menu02-title {
+        text-align: center;
+        font-size: 1.1rem;
+        padding: 2px;
+    }
+
+    .menu02-panel {
+        width: 94%;
+    }
+
+    .question {
+        text-align: center;
+    }
+
+}

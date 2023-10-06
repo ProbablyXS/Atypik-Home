@@ -1,0 +1,233 @@
+{
+  "entrypoints": {
+    "js/app": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_dom-iterables_js-node_modules_core-js_internals_dom-to-43e662.js",
+        "/build/vendors-node_modules_core-js_internals_create-property_js-node_modules_core-js_modules_es_str-d1bad0.js",
+        "/build/vendors-node_modules_core-js_internals_array-slice-simple_js-node_modules_core-js_internals_d-d5e6c2.js",
+        "/build/vendors-node_modules_core-js_internals_array-method-has-species-support_js-node_modules_core--88015a.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_array-b8c579.js",
+        "/build/vendors-node_modules_mui_icons-material_Facebook_js-node_modules_mui_icons-material_Instagram-622d03.js",
+        "/build/js/app.js"
+      ],
+      "css": [
+        "/build/js/app.css"
+      ]
+    },
+    "js/hosting": {
+      "js": [
+        "/build/runtime.js",
+        "/build/js/hosting.js"
+      ]
+    },
+    "js/components/navbar": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_dom-iterables_js-node_modules_core-js_internals_dom-to-43e662.js",
+        "/build/js/components/navbar.js"
+      ]
+    },
+    "js/components/date_range_picker": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_dom-iterables_js-node_modules_core-js_internals_dom-to-43e662.js",
+        "/build/vendors-node_modules_core-js_internals_create-property_js-node_modules_core-js_modules_es_str-d1bad0.js",
+        "/build/vendors-node_modules_core-js_internals_array-slice-simple_js-node_modules_core-js_internals_d-d5e6c2.js",
+        "/build/vendors-node_modules_core-js_modules_es_date_to-string_js-node_modules_core-js_modules_es_fun-d5b879.js",
+        "/build/js/components/date_range_picker.js"
+      ],
+      "css": [
+        "/build/js/components/date_range_picker.css"
+      ]
+    },
+    "js/account/edit": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_dom-iterables_js-node_modules_core-js_internals_dom-to-43e662.js",
+        "/build/vendors-node_modules_core-js_internals_create-property_js-node_modules_core-js_modules_es_str-d1bad0.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_for-each_js-node_modules_core-js_modules_es_arr-5099fc.js",
+        "/build/js/account/edit.js"
+      ]
+    },
+    "js/account/new_hosting": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_dom-iterables_js-node_modules_core-js_internals_dom-to-43e662.js",
+        "/build/vendors-node_modules_core-js_internals_create-property_js-node_modules_core-js_modules_es_str-d1bad0.js",
+        "/build/vendors-node_modules_core-js_internals_array-slice-simple_js-node_modules_core-js_internals_d-d5e6c2.js",
+        "/build/vendors-node_modules_core-js_internals_array-method-has-species-support_js-node_modules_core--88015a.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_from_js-node_modules_core-js_modules_es_array_i-51bfa1.js",
+        "/build/js/account/new_hosting.js"
+      ]
+    },
+    "js/rentals": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_dom-iterables_js-node_modules_core-js_internals_dom-to-43e662.js",
+        "/build/vendors-node_modules_core-js_modules_es_array_concat_js-node_modules_core-js_modules_es_array-b8c579.js",
+        "/build/vendors-node_modules_core-js_internals_array-iteration_js-node_modules_core-js_internals_func-035c73.js",
+        "/build/js/rentals.js"
+      ]
+    },
+    "js/rentals_info": {
+      "js": [
+        "/build/runtime.js",
+        "/build/vendors-node_modules_core-js_internals_dom-iterables_js-node_modules_core-js_internals_dom-to-43e662.js",
+        "/build/js/rentals_info.js"
+      ]
+    },
+    "css/errors/error.css": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/errors/error.css.css"
+      ]
+    },
+    "css/home": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/home.css"
+      ]
+    },
+    "css/hosting": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/hosting.css"
+      ]
+    },
+    "css/about_us": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/about_us.css"
+      ]
+    },
+    "css/global": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/global.css"
+      ]
+    },
+    "css/login": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/login.css"
+      ]
+    },
+    "css/register": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/register.css"
+      ]
+    },
+    "css/rentals": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/rentals.css"
+      ]
+    },
+    "css/rentals_info": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/rentals_info.css"
+      ]
+    },
+    "css/checkout": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/checkout.css"
+      ]
+    },
+    "css/account/home": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/account/home.css"
+      ]
+    },
+    "css/account/edit": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/account/edit.css"
+      ]
+    },
+    "css/account/done": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/account/done.css"
+      ]
+    },
+    "css/account/new_hosting": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/account/new_hosting.css"
+      ]
+    },
+    "css/account/my_hostings": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/account/my_hostings.css"
+      ]
+    },
+    "css/components/navbar": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/components/navbar.css"
+      ]
+    },
+    "css/components/footer": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/components/footer.css"
+      ]
+    },
+    "css/components/loader": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/components/loader.css"
+      ]
+    },
+    "css/components/back": {
+      "js": [
+        "/build/runtime.js"
+      ],
+      "css": [
+        "/build/css/components/back.css"
+      ]
+    }
+  }
+}

@@ -1,0 +1,133 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/back') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/rentals') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ encore_entry_script_tags('js/app') }}
+	{{ encore_entry_script_tags('js/components/navbar') }}
+	{{ encore_entry_script_tags('js/rentals') }}
+{% endblock %}
+
+{% block body %}
+	<div class="header">
+		<div class="bgImg"></div>
+		<div class="title">
+			<h1>{{ 'navbar.location'|trans }}</h1>
+		</div>
+	</div>
+	<section class="search">
+		<div class="filter">
+			{{ form_start(myRentalsForm, {'attr': {'class': 'search-form'}}) }}
+			{{ form_end(myRentalsForm) }}
+		</div>
+
+		<div class="menu-list">
+			<span>Hébergement en ligne :
+				{{hostings_list|length}}</span>
+
+			<span>Total trouvé :
+				{{hostings_filter|length}}</span>
+		</div>
+
+		<div class="input-filter">
+			<img src="/build/images/rentals/filter.png" alt="landscape">
+			<p>Filtre</p>
+		</div>
+
+		<form id="filterForm" class="hide" method="get">
+			{% set totalParkingLength = hostings_filter|filter(hosting => hosting.parking)|length %}
+			{% set totalPetsLength = hostings_filter|filter(hosting => hosting.petsAllowed)|length %}
+			{% set totalWifiLength = hostings_filter|filter(hosting => hosting.wifi)|length %}
+			{% set totalElectricityLength = hostings_filter|filter(hosting => hosting.electricity)|length %}
+
+			{{ form_start(myRentalsFilterForm) }}
+			<div class="additional-filter">
+				<span>Options supplémentaires</span>
+				{{ form_row(myRentalsFilterForm.parking, {'label': 'Parking (' ~ totalParkingLength ~ ')'}) }}
+				{{ form_row(myRentalsFilterForm.pets, {'label': 'Animaux (' ~ totalPetsLength ~ ')'}) }}
+				{{ form_row(myRentalsFilterForm.wifi, {'label': 'Wifi (' ~ totalWifiLength ~ ')'}) }}
+				{{ form_row(myRentalsFilterForm.electricity, {'label': 'Electricité (' ~ totalElectricityLength ~ ')'}) }}
+			</div>
+			<div class="price-filter">
+				<span>Prix</span>
+				{{ form_row(myRentalsFilterForm.priceMin) }}
+				{{ form_row(myRentalsFilterForm.priceMax) }}
+			</div>
+			<div class="bathrooms-filter">
+				<span>Chambres</span>
+				{{ form_row(myRentalsFilterForm.number_of_bathrooms) }}
+			</div>
+			<div class="echo-score-filter">
+				<span>Eco-score</span>
+				{{ form_row(myRentalsFilterForm.ecoScore) }}
+			</div>
+			{{ form_end(myRentalsFilterForm) }}
+		</form>
+
+		{% if (hostings_filter|length != 0) %}
+			<div class="myHosting-panel">
+				{% for hosting in hostings_filter %}
+					<div class="myHosting-panel-info">
+						<div class="myHosting-panel-img">
+							{% set imageFirst = hosting.images[0] %}
+							<a href="{{ path('app_rentals') ~ "/" ~ hosting.name|lower|replace({' ':'-'}) }}">
+								<img src="{{ images_dir ~ imageFirst.name }}" alt="house">
+							</a>
+						</div>
+						<div class="myHosting-panel-text-global">
+							<div class="myHosting-panel-text">
+								<a href="{{ path('app_rentals') ~ "/" ~ hosting.name|lower|replace({' ':'-'}) }}">{{ hosting.name }}</a>
+								<div class="myHosting-text-info">
+									<div class="myHosting-panel-text-info">
+										<img src="/build/images/rentals/house-icon.svg" alt="house-info">
+										<span>{{ hosting.types.name }},
+											{{ hosting.surface }}
+											m²,
+											{% if (hosting.numberOfBedrooms == 1) %}
+												{{ hosting.numberOfBedrooms }}
+												chambre</span>
+										{% else %}
+											{{ hosting.numberOfBedrooms }}
+											chambres</span>
+									{% endif %}
+								</div>
+								<div class="myHosting-panel-text-info">
+									<img src="/build/images/rentals/map-marker.svg" alt="house-info">
+									<p class="localisation-text">{{ hosting.country.name }},
+										{{ hosting.city }},
+										{{ hosting.address }},
+										{{ hosting.zipcode }}
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="myHosting-panel-text-info-price">
+							<span>A partir de</span>
+							<p>{{ hosting.nightPrice }}
+								€
+								<span>/Nuit</span>
+							</p>
+						</div>
+					</div>
+				</div>
+			{% endfor %}
+		</div>
+	{% else %}
+		<div class="myHosting-panel nothing-found">
+			<img src="/build/images/account/my_hostings/house.avif">
+			<span>Aucun hébergement trouvée</span>
+		</div>
+	{% endif %}
+
+</section>{% endblock %}

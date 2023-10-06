@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/back') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/account/my_hostings') }}
+	{# DATE RANGE PICKER #}
+	<link
+	rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css"/>
+{# DATE RANGE PICKER END #}
+{% endblock %}
+
+{% block javascripts %}
+	{{ encore_entry_script_tags('js/app') }}
+	{{ encore_entry_script_tags('js/components/navbar') }}
+	{# DATE RANGE PICKER #}
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/jquery/latest/jquery.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+	<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+	{# DATE RANGE PICKER END #}
+{% endblock %}
+
+
+{% block body %}
+	<div class="back-to-home">
+		<a href="{{ path('app_account', {'page': 'home'}) }}">
+			<img src="/build/images/account/back.png" alt="my_account">
+			<span>{{ 'account.edit.back_btn'|trans }}</span>
+		</a>
+	</div>
+	<div class="header">
+		<div class="title">
+			<h1>{{ 'account.booking.title'|trans }}</h1>
+		</div>
+	</div>
+	<section class="search">
+		<div class="filter">
+			{{ form_start(myReservationForm, {'attr': {'class': 'search-form'}}) }}
+			{{ form_end(myReservationForm) }}
+		</div>
+
+		<div class="menu-list">
+			<span>Réservation en ligne :
+				{{reservations_list|length}}</span>
+
+			<span>Total trouvé :
+				{{reservations_filter|length}}</span>
+		</div>
+
+		{% if (reservations_filter|length != 0) %}
+			<div class="myHosting-panel">
+				{% for reservation in reservations_filter %}
+					<div class="myHosting-panel-info">
+						<div class="myHosting-panel-img">
+							{% set imageFirst = reservation.hostings.images[0] %}
+							<a href="{{ path('app_rentals') ~ "/" ~ reservation.hostings.name|lower|replace({' ':'-'}) }}">
+								<img src="{{ images_dir ~ imageFirst.name }}">
+							</a>
+						</div>
+						<div class="myHosting-panel-text">
+							<a href="{{ path('app_rentals') ~ "/" ~ reservation.hostings.name|lower|replace({' ':'-'}) }}">{{ reservation.hostings.name }}</a>
+							<div class="myHosting-panel-text-info">
+								<p style="font-size: 12px; font-weight: 500;">Type :
+									{{ reservation.hostings.types.name }}</p>
+								<p style="color: orange;">Prix :
+									{{ reservation.totalPrice }}€</p>
+								<div style="margin-top: 30px;">
+									<p style="font-weight: 500;">Date arrivé :
+										{{ reservation.startDate|date('d/m/Y') }}
+										à
+										{{reservation.hostings.arrivalTime|date('H:i')}}</p>
+									<p style="font-weight: 500;">Date départ :
+										{{ reservation.endDate|date('d/m/Y') }}
+										à
+										{{reservation.hostings.departureTime|date('H:i')}}</p>
+								</div>
+								<div style="margin-top: 30px;">
+									<span>Commentaire :
+										{{reservation.comment}}</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% else %}
+			<div class="myHosting-panel nothing-found">
+				<img src="/build/images/account/my_hostings/house.avif">
+				<span>Aucune réservation trouvé</span>
+			</div>
+		{% endif %}
+	</section>
+{% endblock %}

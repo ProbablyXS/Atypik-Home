@@ -1,0 +1,87 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/back') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/account/my_hostings') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ encore_entry_script_tags('js/app') }}
+	{{ encore_entry_script_tags('js/components/navbar') }}
+{% endblock %}
+
+
+{% block body %}
+	<div class="back-to-home">
+		<a href="{{ path('app_account', {'page': 'home'}) }}">
+			<img src="/build/images/account/back.png" alt="my_account">
+			<span>{{ 'account.edit.back_btn'|trans }}</span>
+		</a>
+	</div>
+	<div class="header">
+		<div class="title">
+			<h1>{{ 'account.my_hostings.title'|trans }}</h1>
+		</div>
+	</div>
+	<section class="search">
+		<div class="filter">
+			{{ form_start(myHostingForm, {'attr': {'class': 'search-form'}}) }}
+			{{ form_end(myHostingForm) }}
+		</div>
+
+		<div class="menu-list">
+			<span>Hébergement en ligne :
+				{{hostings_list|length}}</span>
+
+			<span>Total trouvé :
+				{{hostings_filter|length}}</span>
+		</div>
+
+		{% if (hostings_filter|length != 0) %}
+			<div class="myHosting-panel">
+				{% for hosting in hostings_filter %}
+					<div class="myHosting-panel-info">
+						<div class="myHosting-panel-img">
+							{% set imageFirst = hosting.images[0] %}
+							<a href="{{ path('app_rentals') ~ "/" ~ hosting.name|lower|replace({' ':'-'}) }}">
+								<img src="{{ images_dir ~ imageFirst.name }}">
+							</a>
+						</div>
+						<div class="myHosting-panel-text">
+							<a href="{{ path('app_rentals') ~ "/" ~ hosting.name|lower|replace({' ':'-'}) }}">{{ hosting.name }}</a>
+							<div class="myHosting-panel-text-info">
+								<p>{{ hosting.nightPrice }}
+									€</p>
+								<span>{{ hosting.types.name }}</span>
+							</div>
+							<form method="POST" action="/" onsubmit="return confirm('Voulez vous modifier cet hébergement');">
+								<div class="account-panel-info-button">
+									<button type="submit" class="btn btn-danger">Modifier cet hébergement</button>
+								</form>
+								<form method="DELETE" action="{{ path('delete_hosting') }}" onsubmit="return confirm('Voulez vous vraiment supprimer cet hébergement');">
+									<input type="hidden" name="hosting" id="hosting" value="{{ hosting.id }}">
+									<button type="submit" class="btn btn-danger" style="width: 40px;">
+										<img src="/build/images/account/my_hostings/delete.png">
+									</button>
+								</form>
+							</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+		{% else %}
+			<div class="myHosting-panel nothing-found">
+				<img src="/build/images/account/my_hostings/house.avif">
+				<span>Aucun hébergement trouvée</span>
+			</div>
+		{% endif %}
+	</section>
+{% endblock %}

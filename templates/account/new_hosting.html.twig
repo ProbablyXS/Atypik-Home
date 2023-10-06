@@ -1,0 +1,46 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/account/new_hosting') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ encore_entry_script_tags('js/app') }}
+	{{ encore_entry_script_tags('js/components/navbar') }}
+	{{ encore_entry_script_tags('js/account/new_hosting') }}
+{% endblock %}
+
+{% block body %}
+	<div class="header">
+		<div class="title">
+			<h1>Bienvenue Cher(e) hôte, déposées votre logement!</h1>
+		</div>
+		<div class="header-text">
+			<p>Nous vous accueillons avec enthousiasme sur Atypik Home, la plateforme idéale pour partager la singularité de votre logement insolite. Déposez dès maintenant votre annonce et permettez aux voyageurs de vivre une expérience unique et mémorable dans un cadre qui ne ressemble à aucun autre.</p>
+		</div>
+	</div>
+
+	<section class="menu01">
+		<div class="menu01-panel">
+			<div class="image-container" id="image-container"></div>
+			{{ form_start(newHostingForm) }}
+			{{ form_end(newHostingForm) }}
+		</div>
+	</div>
+
+</section>
+<section class="menu02" id="section1">
+	<div class="question">
+		<h3>Une question ?</h3>
+		<p>Envoyez-nous un petit email à
+			<a href="mailto:contact@atypik-home.com?subject=Question%20concernant%20mon%20inscription%20hôte%20chez%20Atypik Home">contact@atypik-home.com</a>, on vous répond avec plaisir !</p>
+	</div>
+</div></section>{% endblock %}

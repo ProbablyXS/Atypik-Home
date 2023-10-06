@@ -1,0 +1,391 @@
+.header {
+    display: flex;
+    padding-top: 106px;
+    justify-content: space-around;
+}
+
+.title h1 {
+    background-color: rgb(213 139 112);
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-size: 2rem;
+    padding: 4px 8px;
+}
+
+.menu01 {
+    display: flex;
+    border-bottom: solid;
+    border-color: #f6e7e1;
+    justify-content: center;
+    border-width: 6px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-title {
+    font-size: 1rem;
+    padding: 26px;
+}
+
+.menu-title h1 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu-title h1::after {
+    content: "";
+    margin-top: 8px;
+    border-bottom: 3px solid rgb(255 143 98);
+    display: block;
+    width: 40px;
+    transform: translateY(50%);
+}
+
+.menu01-pt1 {
+    display: flex;
+    flex-direction: row;
+    max-width: 2225px;
+}
+
+.menu01-pt2 {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: center;
+    max-width: 2225px;
+}
+
+.menu01-img {
+    width: 50%;
+}
+
+.menu01-img img {
+    width: 100%;
+    height: 100%;
+}
+
+.menu01-text {
+    display: flex;
+    width: 50%;
+    background-color: rgb(33, 150, 83);
+    color: white;
+    font-weight: 700;
+    font-size: 17px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu01-text h3 {
+    font-size: 1.6rem;
+}
+
+.menu01-text span {
+    font-weight: normal;
+    padding: 30px;
+}
+
+.menu02 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 16px 0px;
+}
+
+.menu02-panel {
+    display: flex;
+    flex-direction: row;
+    padding: 20px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu02-img img {
+    width: 429px;
+    border-radius: 18px;
+    transform: rotateX(37deg);
+}
+
+.menu02-text {
+    width: 40%;
+    padding: 43px;
+    font-size: medium;
+    font-weight: 400;
+}
+
+.menu02-text h3 {
+    font-size: x-large;
+}
+
+.menu02-text span {
+    font-weight: bold;
+}
+
+
+
+
+
+
+.menu03 {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 16px 0px;
+}
+
+.menu03-panel {
+    display: flex;
+    flex-direction: row-reverse;
+    padding: 20px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.menu03-img img {
+    width: 429px;
+    border-radius: 18px;
+}
+
+.menu03-text {
+    width: 40%;
+    padding: 43px;
+    font-size: medium;
+    font-weight: 400;
+}
+
+.menu03-text h3 {
+    font-size: x-large;
+}
+
+.menu03-text span {
+    font-weight: bold;
+}
+
+
+
+.menu04 {
+    display: flex;
+    justify-content: center;
+    border-top: solid;
+    border-bottom: solid;
+    border-color: #ff8f62;
+    background-color: #e9c48f17;
+    flex-direction: column;
+}
+
+.menu04-text{
+    background-color: #ff845208;
+    margin: 28px 0px;
+    border-radius: 10px;
+}
+
+.menu04-panel {
+    display: flex;
+    padding: 20px 0px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu04-img img {
+    width: 561px;
+    border-radius: 10px;
+}
+
+.menu04-text {
+    width: 864px;
+    padding: 43px;
+    font-size: medium;
+    font-weight: 400;
+    background-color: #ff845208;
+    border-radius: 10px;
+}
+
+.menu04-text h3 {
+    font-size: x-large;
+    color: #e1a05b;
+    text-align: left;
+}
+
+.menu04-text span {
+    font-weight: bold;
+}
+
+.menu04-map {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.menu04-map-text {
+    width: 50%;
+    padding: 20px;
+    position: relative;
+    border-radius: 4px;
+    border: solid;
+    border-color: #ff8f62;
+    bottom: 87px;
+    background-color: white;
+    font-size: medium;
+    font-weight: 400;
+}
+
+.menu04-map h3 {
+    font-size: x-large;
+    color: #e1a05b;
+    text-align: center;
+}
+
+.menu04-map span {
+    font-weight: bold;
+}
+
+iframe {
+    width: 988px;
+    border-radius: 20px;
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+
+    .menu01-pt1 {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .menu01-img {
+        display: flex;
+        width: 100%;
+    }
+
+    .menu01-text {
+        width: 100%;
+    }
+
+    .menu01-pt2 {
+        flex-direction: column;
+    }
+
+    .menu02-panel {
+        flex-direction: column;
+    }
+
+    .menu02-text {
+        width: unset;
+    }
+
+    .menu02-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .menu02-img img {
+        width: 85%;
+        padding: 10px;
+    }
+
+    .menu03-panel {
+        flex-direction: column;
+    }
+
+    .menu03-text {
+        width: unset;
+    }
+
+    .menu04-text {
+        width: unset;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    .title h1 {
+        font-size: 1.8rem;
+    }
+
+    .menu01-pt1 {
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .menu01-img {
+        display: flex;
+        width: 100%;
+    }
+
+    .menu01-text {
+        width: 100%;
+        text-align: center;
+    }
+
+    .menu01-text h3 {
+        width: 98%;
+    }
+
+    .menu01-pt2 {
+        flex-direction: column;
+    }
+
+    .menu02-panel {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .menu02-text {
+        width: unset;
+    }
+
+    .menu02-img {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .menu02-img img {
+        width: 85%;
+        padding: 10px;
+    }
+
+    .menu03 {
+        text-align: center;
+    }
+
+    .menu03-panel {
+        flex-direction: column;
+    }
+    
+    .menu03-text {
+        width: unset;
+    }
+
+    .menu04-panel {
+        padding: unset;
+    }
+
+    .menu04-img img {
+        width: 100%;
+        border-radius: 0px;
+    }
+
+    .menu04-map h3 {
+        padding: 18px;
+    }
+    .menu04-text {
+        width: unset;
+        text-align: center;
+    }
+
+    iframe {
+        width: 100%;
+    }
+
+    .menu04-map-text {
+        width: 100%;
+        position: unset;
+    }
+}

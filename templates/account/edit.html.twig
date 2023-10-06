@@ -1,0 +1,127 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/back') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/account/edit') }}
+{% endblock %}
+
+{% block javascripts %}
+	{{ encore_entry_script_tags('js/app') }}
+	{{ encore_entry_script_tags('js/components/navbar') }}
+	{{ encore_entry_script_tags('js/account/edit') }}
+{% endblock %}
+
+{% block body %}
+	<div class="back-to-home">
+		<a href="{{ path('app_account', {'page': 'home'}) }}">
+			<img src="/build/images/account/back.png" alt="my_account">
+			<span>{{ 'account.edit.back_btn'|trans }}</span>
+		</a>
+	</div>
+
+	<section class="account">
+		<div class="account-title">
+			<h1>{{ 'account.edit.title'|trans }}</h1>
+		</div>
+		<div class="account-panel">
+			<form method="post" class="edit" enctype="multipart/form-data">
+				<div class="account-panel-info-account">
+					<span>Informations de compte</span>
+
+					<div class="account-panel-info-account-gender">
+						{{ form_row(editForm.genders) }}
+					</div>
+
+					<div class="account-panel-info-account-others">
+						{{ form_row(editForm.firstname) }}
+						{{ form_row(editForm.lastname) }}
+					</div>
+					<div class="description">
+						{{ form_row(editForm.description) }}
+					</div>
+					<div class="account-panel-info-account-others">
+						{{ form_row(editForm.date_of_birth) }}
+						{{ form_row(editForm.phone) }}
+
+						<div class="account-panel-info-text">
+							<span>{{ 'account.edit.username'|trans }}</span>
+							<p>{{ personal_info.username }}</p>
+						</div>
+
+						<div class="account-panel-info-text">
+							<span>{{ 'account.edit.status'|trans }}</span>
+							<p>{{ personal_info.Status.getName }}</p>
+						</div>
+
+						<div class="account-panel-info-text">
+							<span>{{ 'account.edit.last_connection'|trans }}</span>
+							<p>{{personal_info.lastConnection|date('d/m/Y à H\\hi')}}</p>
+						</div>
+
+						<div class="account-panel-info-text">
+							<span>{{ 'account.edit.account_creation'|trans }}</span>
+							<p>{{personal_info.createdAt|date('d/m/Y à H\\hi')}}</p>
+						</div>
+					</div>
+					{{ form_errors(editForm) }}
+
+				</div>
+
+				<div class="account-panel-info-account">
+					<span>Photo de profil</span>
+					<div class="account-panel-info-account-others">
+						<div id="image-container">
+							<img src="{{images_dir~profile_img}}" alt="picture">
+							{{ form_row(editForm.imageFile) }}
+						</div>
+						<div class="account-panel-info-account-others"></div>
+						{{ form_errors(editForm) }}
+					</div>
+				</div>
+
+				<div class="account-panel-info-account">
+					<span>Adresse</span>
+
+					<div class="account-panel-info-account-others">
+						{{ form_row(editForm.address) }}
+						{{ form_row(editForm.zipcode) }}
+						{{ form_row(editForm.city) }}
+						{{ form_row(editForm.country) }}
+					</div>
+					<div class="account-panel-info-account-others"></div>
+					{{ form_errors(editForm) }}
+				</div>
+
+				<div class="account-panel-info-account">
+
+					<div class="account-panel-info-account-others">
+						{{ form_row(editForm.email) }}
+					</div>
+					<div class="account-panel-info-account-others"></div>
+					{{ form_errors(editForm) }}
+				</div>
+
+				{{ form_row(editForm._token) }}
+
+				<div class="account-panel-btn">
+					<div class="account-panel-info-button-save">
+						<button type="submit" class="btn-disabled" id="account-info-btn-save">{{ 'account.edit.save_btn'|trans }}</button>
+					</div>
+				</form>
+				<form method="DELETE" action="{{ path('delete_user') }}" onsubmit="return confirm('{{ 'account.edit.delete_account_message'|trans }}');">
+					<div class="account-panel-info-button">
+						<button type="submit" class="btn btn-danger">{{ 'account.edit.delete_account_btn'|trans }}</button>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+</section>{% endblock %}

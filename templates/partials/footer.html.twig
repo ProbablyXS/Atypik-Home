@@ -1,0 +1,76 @@
+<html>
+	<body>
+		<div class="footer">
+			<div class="info">
+				<div class="logo-image-footer">
+					<img src="/build/images/logo.png" alt="logo">
+				</div>
+				<p>{{ 'footer.description'|trans }}</p>
+			</div>
+			<div class="follow-us">
+				<p>{{ 'footer.follow_us'|trans }}</p>
+				<div {{ react_component('components/footer') }}>
+					<div style="display: flex; gap: 11px;">
+						<div class="loader"></div>
+						<div class="loader"></div>
+						<div class="loader"></div>
+					</div>
+				</div>
+			</div>
+			<div class="separator"></div>
+
+			<div class="every-link">
+				<div class="every-link-panel">
+					<div class="every-link-panel-title">
+						<span>{{ 'footer.about_title'|trans }}</span>
+					</div>
+					<div class="every-link-text">
+						<a href="{{ path('app_about_us') }}">
+							<span>{{ 'footer.about'|trans }}</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="every-link-panel">
+					<div class="every-link-panel-title">
+						<span>{{ 'footer.contact_help_title'|trans }}</span>
+					</div>
+					<div class="every-link-text">
+						<a href="{{ path('app_hosting') }}">
+							<span>{{ 'footer.host'|trans }}</span>
+						</a>
+						<a href="mailto:contact@atypik-home.com?subject=Suite%20%C3%A0%20ma%20visite%20sur%20atypik-home.com">
+							<span>{{ 'footer.contact'|trans }}</span>
+						</a>
+						<a href="tel:+33785219502">
+							<span>{{ 'footer.client'|trans }}</span>
+						</a>
+					</div>
+				</div>
+
+				<div class="every-link-panel">
+					<div class="every-link-panel-title">
+						<span>{{ 'footer.legal_title'|trans }}</span>
+					</div>
+					<div class="every-link-text">
+						<a href="/pdf/cgvu.pdf" target="_blank">
+							<span>{{ 'footer.cgvu'|trans }}</span>
+						</a>
+						<a href="/pdf/Mentions_Légales_et_Politique_de_confidentialité_Atypik-Home.pdf" target="_blank">
+							<span>{{ 'footer.mentions'|trans }}</span>
+						</a>
+					</div>
+				</div>
+
+			</div>
+
+			<div class="separator"></div>
+			<div class="copyright">
+				<p>©
+					{{ "now"|date("Y") }}
+					{{ 'footer.copyright'|trans }}</p>
+				<p>{{ 'footer.dev'|trans }}</p>
+			</div>
+		</div>
+	</body>
+</html>

@@ -1,0 +1,293 @@
+.account {
+    display: flex;
+    justify-content: center;
+    padding: 109px 0px;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-title {
+    border-bottom: solid;
+    width: 50px;
+    display: flex;
+    border-color: #d7724e82;
+    justify-content: center;
+}
+
+.account-title h1 {
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 8px;
+}
+
+.account-panel {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 31px;
+    padding: 38px;
+    padding-top: 62px;
+    margin-top: 35px;
+    background-color: white;
+    border-radius: 27px;
+    font-weight: bold;
+    box-shadow: 0px 0px 4px #00000029;
+    font-size: 18px;
+    justify-items: center;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.account-panel-info-account-others {
+    display: grid;
+    padding-bottom: 10px;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.account-panel-info-account-others img {
+    width: 110px;
+    padding: 5px;
+    cursor: pointer;
+    object-fit: cover;
+    border-radius: 190px;
+    height: 110px;
+    transition: all 0.3s;
+}
+
+.account-panel-info-text {
+    margin: 8px;
+    width: 390px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 6px;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.account-panel-info-text label {
+    padding-bottom: 8px;
+}
+
+.account-panel-info-text a {
+    text-decoration: none;
+    color: black;
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+.account-panel-info-text a img {
+    width: 31px;
+    margin-bottom: 27px;
+}
+
+.account-panel-info-text p {
+    color: rgb(107, 114, 128);
+    font-weight: 400;
+}
+
+.account-panel-info-text span {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.account-panel-info-text input, select {
+    border-radius: 10px;
+    padding: 13px;
+    border-width: 1px;
+    font-size: 15px;
+    border-color: #00000036;
+}
+
+.account-panel-info-account {
+    display: flex;
+    flex-direction: column;
+    border-bottom: solid;
+    margin-bottom: 29px;
+    border-width: 2px;
+    border-color: #f6e7e1;
+}
+
+.account-panel-info-account-gender {
+    font-weight: 500;
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+}
+
+.account-panel-info-account-gender-input {
+    display: flex;
+    flex-direction: row;
+    gap: 14px;
+    margin-bottom: 14px;
+}
+
+.edit_form_account_info_radio {
+    display: flex;
+    padding-top: 10px;
+    gap: 6px;
+    accent-color: #cf763c;
+}
+
+.account-panel-btn {
+    display: flex;
+    justify-content: center;
+}
+
+.account-panel-info-button button:hover {
+    background-color: #a33e17;
+}
+
+.account-panel-info-button button {
+    text-decoration: none;
+    color: black;
+    background-color: #e16636;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0px 0px 4px #ff6b6b6b;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: aliceblue;
+    width: 287px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.account-panel-info-button-save button {
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    box-shadow: 0px 0px 4px #ff6b6b6b;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 8px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border: aliceblue;
+    width: 287px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#image-container img:hover {
+    transform: scale(0.95);
+    transition: all 0.3s;
+    background-color: #ffa47f;
+}
+
+.btn-enabled {
+    background-color: #e16636;
+    cursor: pointer;
+}
+
+.btn-enabled:hover {
+    background-color: rgba(231, 117, 72, 0.953);
+}
+
+.btn-disabled {
+    background-color: #ffa987;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.btn-disabled:hover {
+    background-color: #ffa987d9;
+}
+
+.hosting_form_new_hosting_info {
+    border-radius: 15px;
+    border-width: 1px;
+    display: flex;
+    padding: 13px;
+    border-color: #00000036;
+    gap: 10px;
+    font-size: 15px;
+    align-items: center;
+}
+
+.vertical-resize {
+    resize: vertical;
+}
+
+.description {
+    height: 226px;
+    display: flex;
+}
+
+.desc-panel-info-text {
+    margin: 8px;
+    display: flex;
+    flex-direction: column;
+    padding-top: 6px;
+    width: 100%;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+.desc-panel-info-text label {
+    padding-bottom: 8px;
+}
+
+input[type=radio] {
+    border: 0px;
+    transform: scale(1.5);
+}
+
+/* Tablet and Smaller Desktop */
+@media (min-width: 701px) and (max-width: 1120px) {
+
+    .account-panel-info-text {
+        width: 315px;
+    }
+
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+
+    form {
+        width: 100%;
+    }
+
+    .account-panel {
+        display: flex;
+        justify-items: center;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    .account-panel-info-account {
+        padding-left: 19px;
+        padding-right: 19px;
+    }
+
+    .account-panel-info-account-others {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    .account-panel-info-text {
+        width: unset;
+    }
+
+    .account-panel-info-button {
+        display: flex;
+        justify-content: center;
+    }
+
+    .account-panel-btn {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+}

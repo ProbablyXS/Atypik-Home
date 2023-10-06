@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/account/done') }}
+{% endblock %}
+
+{% block body %}
+	<section class="done">
+		<div class="info">
+			<img src="/build/images/payment/success/success.png" alt="landscape">
+			<h2>Le paiement s'est déroulé comme sur des roulettes !</h2>
+			<p>Merci de votre confiance. Vous pourrez la retrouver dans la section « Mes réservartion » de votre compte.</p>
+			<div class="btn">
+				<a class="btn-1" href="{{ path('app_account', {'page': 'booking'}) }}">Voir mes réservations</a>
+				<a href="{{ path('app_home') }}">Revenir à la page d'accueil</a>
+			</div>
+		</div>
+	</section>
+{% endblock %}
+{% block footer %}{% endblock %}

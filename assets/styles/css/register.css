@@ -1,0 +1,98 @@
+.register {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background-image: url("/public/build/images/register/bg.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 809px;
+    padding-top: 91px;
+    justify-content: center;
+    align-items: center;
+}
+
+.register-panel {
+    background-color: white;
+    box-shadow: 2px 6px 23px #00000085;
+    border-radius: 15px;
+    padding: 29px;
+    gap: 8px;
+    margin: 26px;
+    width: 406px;
+    display: flex;
+    flex-direction: column;
+}
+
+.register-panel-title {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.register-panel-title h1 {
+    height: 10px;
+}
+
+.register-panel-title p {
+    font-size: 13px;
+}
+
+.register-panel-info {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.register-panel-info-agree {
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.register-panel-info-agree input,
+.register-panel-info-agree label {
+    cursor: pointer;
+}
+
+.register-panel-info-field {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.register-panel-info-field ul {
+    color: rgb(224, 60, 49);
+    padding-inline-start: 24px;
+}
+
+.register-panel-info input {
+    border-radius: 10px;
+    padding: 13px;
+    border-width: 1px;
+    border-color: #00000036;
+}
+
+.register-panel p a {
+    color: black;
+}
+
+.sbm-button  {
+    border-radius: 18px;
+    padding: 11px;
+    border-width: 0px;
+    background-color: #f6e7e1;
+    cursor: pointer;
+    color: #e4994e;
+}
+
+.sbm-button:hover  {
+    background-color: rgba(238, 207, 196, 0.318);
+}
+
+/* Mobile */
+@media (max-width: 700px) {
+    .register-panel {
+        width: 236px;
+    }
+}

@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Atypik Home -
+	{{title}}
+{% endblock %}
+
+{% block stylesheets %}
+	{{ encore_entry_link_tags('css/global') }}
+	{{ encore_entry_link_tags('css/components/loader') }}
+	{{ encore_entry_link_tags('css/components/navbar') }}
+	{{ encore_entry_link_tags('css/components/footer') }}
+	{{ encore_entry_link_tags('css/register') }}
+{% endblock %}
+
+{% block body %}
+	<form method="post" class="register">
+		<div class="register-panel">
+			<div class="register-panel-title">
+				<h1>Bienvenue !</h1>
+				<p>Inscrivez-vous et explorez des logements hors du commun.</p>
+			</div>
+			<div class="register-panel-info">
+				{{ form_row(registrationForm.lastname) }}
+				{{ form_row(registrationForm.firstname) }}
+				{{ form_row(registrationForm.username) }}
+				{{ form_row(registrationForm.email) }}
+				{{ form_row(registrationForm.date_of_birth) }}
+				{{ form_row(registrationForm.plainPassword) }}
+				{{ form_end(registrationForm) }}
+			</div>
+			<button class="sbm-button" type="submit">
+				S'inscrire
+			</button>
+			<p>Vous avez déjà un compte ?
+				<a href={{ path('app_login') }} for="inputPassword">Se connecter</a>
+			</p>
+		</div>
+	</form>
+{% endblock %}
+{% block footer %}{% endblock %}
